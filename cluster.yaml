@@ -1,0 +1,11 @@
+# cluster configuration for running Snakefile on CHPC cluster
+
+__default__:
+  cpus: 1
+  time: 0-4
+  mem: 32000
+  name: "{rule}"
+
+count_variants:
+  cpus: 8
+  mem: 100000
