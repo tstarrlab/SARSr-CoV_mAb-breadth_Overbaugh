@@ -82,7 +82,7 @@ Initialize the table of barcode-variant pairs from the respective `process_ccs` 
 
 
 ```python
-variants = pd.read_csv(config['codon_variant_table_file_lib47'], na_filter=None)
+variants = pd.read_csv(config['codon_variant_table_file_lib61'], na_filter=None)
 
 variants = variants.reset_index(drop=True)
 
@@ -105,50 +105,50 @@ display(HTML(variants.tail().to_html(index=False)))
   </thead>
   <tbody>
     <tr>
-      <td>ZC45</td>
-      <td>lib47_SARSr-wts</td>
-      <td>TTTTTTCTAATGGAAT</td>
-      <td>1</td>
+      <td>Rc-mk2</td>
+      <td>lib61_SARSr-wts</td>
+      <td>TCCTCTAATCAACACA</td>
       <td>NA</td>
-      <td>NA</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>GD-Pangolin</td>
-      <td>lib47_SARSr-wts</td>
-      <td>TTTTTTCTAGCTGGAG</td>
-      <td>2</td>
       <td>NA</td>
       <td>NA</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <td>AncSARS-CoV-1_alt</td>
-      <td>lib47_SARSr-wts</td>
-      <td>TTTTTTTAGAAGACAT</td>
-      <td>10</td>
+      <td>Rc-mk2</td>
+      <td>lib61_SARSr-wts</td>
+      <td>TTCTGACCTTCCGAAC</td>
       <td>NA</td>
-      <td>NA</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>RhGB01</td>
-      <td>lib47_SARSr-wts</td>
-      <td>TTTTTTTGCGTGACAT</td>
-      <td>4</td>
       <td>NA</td>
       <td>NA</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <td>ZXC21</td>
-      <td>lib47_SARSr-wts</td>
-      <td>TTTTTTTGTACATAGC</td>
-      <td>2</td>
+      <td>BtSY2-RmCX02</td>
+      <td>lib61_SARSr-wts</td>
+      <td>CCCGCATGTAAGTTCT</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>BtSY2-RmCX02</td>
+      <td>lib61_SARSr-wts</td>
+      <td>GACAGAAATTCACCGA</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>BtSY2-RmCX02</td>
+      <td>lib61_SARSr-wts</td>
+      <td>ATCCGGAGCCATTAAA</td>
+      <td>NA</td>
       <td>NA</td>
       <td>NA</td>
       <td>0</td>
@@ -203,8 +203,8 @@ print(f"After removing duplicates, there are {len(variants)} barcodes.")
 
 
     
-    Removing the 0 duplicated barcodes.Started with 31372 barcodes:
-    After removing duplicates, there are 31372 barcodes.
+    Removing the 0 duplicated barcodes.Started with 31416 barcodes:
+    After removing duplicates, there are 31416 barcodes.
 
 
 Pull out a target sequence for matching to the barcode and flanking sequence regions. Note, in this pipeline this is ok because our different backgrounds don't have differing flanks or other features within the actual N16 region covered in Illumina sequencing. If ever placing in-line barcodes here in the future, we would need to modify this.
@@ -245,9 +245,9 @@ display(HTML(barcode_runs.to_html(index=False)))
   </thead>
   <tbody>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
+      <td>C68_3</td>
       <td>1</td>
       <td>1</td>
       <td>221202</td>
@@ -255,9 +255,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s1_b1_S1_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin2</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin2</td>
+      <td>C68_3</td>
       <td>2</td>
       <td>1</td>
       <td>221202</td>
@@ -265,9 +265,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s1_b2_S37_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin3</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin3</td>
+      <td>C68_3</td>
       <td>3</td>
       <td>1</td>
       <td>221202</td>
@@ -275,9 +275,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s1_b3_S3_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin4</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin4</td>
+      <td>C68_3</td>
       <td>4</td>
       <td>1</td>
       <td>221202</td>
@@ -285,9 +285,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s1_b4_S38_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_02_bin1</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_02_bin1</td>
+      <td>C68_3</td>
       <td>1</td>
       <td>2</td>
       <td>221202</td>
@@ -295,9 +295,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s2_b1_S39_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_02_bin2</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_02_bin2</td>
+      <td>C68_3</td>
       <td>2</td>
       <td>2</td>
       <td>221202</td>
@@ -305,9 +305,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s2_b2_S40_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_02_bin3</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_02_bin3</td>
+      <td>C68_3</td>
       <td>3</td>
       <td>2</td>
       <td>221202</td>
@@ -315,9 +315,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s2_b3_S7_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_02_bin4</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_02_bin4</td>
+      <td>C68_3</td>
       <td>4</td>
       <td>2</td>
       <td>221202</td>
@@ -325,9 +325,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s2_b4_S8_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_03_bin1</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_03_bin1</td>
+      <td>C68_3</td>
       <td>1</td>
       <td>3</td>
       <td>221202</td>
@@ -335,9 +335,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s3_b1_S41_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_03_bin2</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_03_bin2</td>
+      <td>C68_3</td>
       <td>2</td>
       <td>3</td>
       <td>221202</td>
@@ -345,9 +345,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s3_b2_S10_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_03_bin3</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_03_bin3</td>
+      <td>C68_3</td>
       <td>3</td>
       <td>3</td>
       <td>221202</td>
@@ -355,9 +355,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s3_b3_S11_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_03_bin4</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_03_bin4</td>
+      <td>C68_3</td>
       <td>4</td>
       <td>3</td>
       <td>221202</td>
@@ -365,9 +365,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s3_b4_S12_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_04_bin1</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_04_bin1</td>
+      <td>C68_3</td>
       <td>1</td>
       <td>4</td>
       <td>221202</td>
@@ -375,9 +375,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s4_b1_S13_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_04_bin2</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_04_bin2</td>
+      <td>C68_3</td>
       <td>2</td>
       <td>4</td>
       <td>221202</td>
@@ -385,9 +385,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s4_b2_S14_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_04_bin3</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_04_bin3</td>
+      <td>C68_3</td>
       <td>3</td>
       <td>4</td>
       <td>221202</td>
@@ -395,9 +395,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s4_b3_S15_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_04_bin4</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_04_bin4</td>
+      <td>C68_3</td>
       <td>4</td>
       <td>4</td>
       <td>221202</td>
@@ -405,9 +405,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s4_b4_S16_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_05_bin1</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_05_bin1</td>
+      <td>C68_3</td>
       <td>1</td>
       <td>5</td>
       <td>221202</td>
@@ -415,9 +415,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s5_b1_S17_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_05_bin2</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_05_bin2</td>
+      <td>C68_3</td>
       <td>2</td>
       <td>5</td>
       <td>221202</td>
@@ -425,9 +425,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s5_b2_S18_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_05_bin3</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_05_bin3</td>
+      <td>C68_3</td>
       <td>3</td>
       <td>5</td>
       <td>221202</td>
@@ -435,9 +435,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s5_b3_S19_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_05_bin4</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_05_bin4</td>
+      <td>C68_3</td>
       <td>4</td>
       <td>5</td>
       <td>221202</td>
@@ -445,9 +445,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s5_b4_S20_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_06_bin1</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_06_bin1</td>
+      <td>C68_3</td>
       <td>1</td>
       <td>6</td>
       <td>221202</td>
@@ -455,9 +455,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b1_S61_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_06_bin2</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_06_bin2</td>
+      <td>C68_3</td>
       <td>2</td>
       <td>6</td>
       <td>221202</td>
@@ -465,9 +465,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b2_S62_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_06_bin3</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_06_bin3</td>
+      <td>C68_3</td>
       <td>3</td>
       <td>6</td>
       <td>221202</td>
@@ -475,9 +475,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b3_S63_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_06_bin4</td>
-      <td>268C3</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_06_bin4</td>
+      <td>C68_3</td>
       <td>4</td>
       <td>6</td>
       <td>221202</td>
@@ -485,9 +485,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b4_S64_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_01_bin1</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_01_bin1</td>
+      <td>C68_183</td>
       <td>1</td>
       <td>1</td>
       <td>221202</td>
@@ -495,9 +495,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s6_b1_S21_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_01_bin2</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_01_bin2</td>
+      <td>C68_183</td>
       <td>2</td>
       <td>1</td>
       <td>221202</td>
@@ -505,9 +505,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s6_b2_S22_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_01_bin3</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_01_bin3</td>
+      <td>C68_183</td>
       <td>3</td>
       <td>1</td>
       <td>221202</td>
@@ -515,9 +515,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s6_b3_S42_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_01_bin4</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_01_bin4</td>
+      <td>C68_183</td>
       <td>4</td>
       <td>1</td>
       <td>221202</td>
@@ -525,9 +525,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s6_b4_S43_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_02_bin1</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_02_bin1</td>
+      <td>C68_183</td>
       <td>1</td>
       <td>2</td>
       <td>221202</td>
@@ -535,9 +535,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s7_b1_S25_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_02_bin2</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_02_bin2</td>
+      <td>C68_183</td>
       <td>2</td>
       <td>2</td>
       <td>221202</td>
@@ -545,9 +545,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s7_b2_S26_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_02_bin3</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_02_bin3</td>
+      <td>C68_183</td>
       <td>3</td>
       <td>2</td>
       <td>221202</td>
@@ -555,9 +555,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s7_b3_S44_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_02_bin4</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_02_bin4</td>
+      <td>C68_183</td>
       <td>4</td>
       <td>2</td>
       <td>221202</td>
@@ -565,9 +565,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s7_b4_S45_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_03_bin1</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_03_bin1</td>
+      <td>C68_183</td>
       <td>1</td>
       <td>3</td>
       <td>221202</td>
@@ -575,9 +575,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s8_b1_S46_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_03_bin2</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_03_bin2</td>
+      <td>C68_183</td>
       <td>2</td>
       <td>3</td>
       <td>221202</td>
@@ -585,9 +585,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s8_b2_S30_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_03_bin3</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_03_bin3</td>
+      <td>C68_183</td>
       <td>3</td>
       <td>3</td>
       <td>221202</td>
@@ -595,9 +595,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s8_b3_S47_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_03_bin4</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_03_bin4</td>
+      <td>C68_183</td>
       <td>4</td>
       <td>3</td>
       <td>221202</td>
@@ -605,9 +605,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s8_b4_S32_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_04_bin1</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_04_bin1</td>
+      <td>C68_183</td>
       <td>1</td>
       <td>4</td>
       <td>221202</td>
@@ -615,9 +615,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s9_b1_S48_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_04_bin2</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_04_bin2</td>
+      <td>C68_183</td>
       <td>2</td>
       <td>4</td>
       <td>221202</td>
@@ -625,9 +625,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s9_b2_S34_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_04_bin3</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_04_bin3</td>
+      <td>C68_183</td>
       <td>3</td>
       <td>4</td>
       <td>221202</td>
@@ -635,9 +635,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s9_b3_S35_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_04_bin4</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_04_bin4</td>
+      <td>C68_183</td>
       <td>4</td>
       <td>4</td>
       <td>221202</td>
@@ -645,9 +645,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s9_b4_S36_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_05_bin1</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_05_bin1</td>
+      <td>C68_183</td>
       <td>1</td>
       <td>5</td>
       <td>221202</td>
@@ -655,9 +655,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s10_b1_S49_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_05_bin2</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_05_bin2</td>
+      <td>C68_183</td>
       <td>2</td>
       <td>5</td>
       <td>221202</td>
@@ -665,9 +665,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s10_b2_S38_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_05_bin3</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_05_bin3</td>
+      <td>C68_183</td>
       <td>3</td>
       <td>5</td>
       <td>221202</td>
@@ -675,9 +675,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s10_b3_S39_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_05_bin4</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_05_bin4</td>
+      <td>C68_183</td>
       <td>4</td>
       <td>5</td>
       <td>221202</td>
@@ -685,9 +685,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s10_b4_S40_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_06_bin1</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_06_bin1</td>
+      <td>C68_183</td>
       <td>1</td>
       <td>6</td>
       <td>221202</td>
@@ -695,9 +695,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b1_S61_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_06_bin2</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_06_bin2</td>
+      <td>C68_183</td>
       <td>2</td>
       <td>6</td>
       <td>221202</td>
@@ -705,9 +705,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b2_S62_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_06_bin3</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_06_bin3</td>
+      <td>C68_183</td>
       <td>3</td>
       <td>6</td>
       <td>221202</td>
@@ -715,9 +715,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b3_S63_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C183_06_bin4</td>
-      <td>268C183</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_183_06_bin4</td>
+      <td>C68_183</td>
       <td>4</td>
       <td>6</td>
       <td>221202</td>
@@ -725,9 +725,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b4_S64_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_01_bin1</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_01_bin1</td>
+      <td>C68_185</td>
       <td>1</td>
       <td>1</td>
       <td>221202</td>
@@ -735,9 +735,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s11_b1_S41_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_01_bin2</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_01_bin2</td>
+      <td>C68_185</td>
       <td>2</td>
       <td>1</td>
       <td>221202</td>
@@ -745,9 +745,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s11_b2_S42_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_01_bin3</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_01_bin3</td>
+      <td>C68_185</td>
       <td>3</td>
       <td>1</td>
       <td>221202</td>
@@ -755,9 +755,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s11_b3_S43_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_01_bin4</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_01_bin4</td>
+      <td>C68_185</td>
       <td>4</td>
       <td>1</td>
       <td>221202</td>
@@ -765,9 +765,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s11_b4_S44_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_02_bin1</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_02_bin1</td>
+      <td>C68_185</td>
       <td>1</td>
       <td>2</td>
       <td>221202</td>
@@ -775,9 +775,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s12_b1_S45_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_02_bin2</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_02_bin2</td>
+      <td>C68_185</td>
       <td>2</td>
       <td>2</td>
       <td>221202</td>
@@ -785,9 +785,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s12_b2_S46_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_02_bin3</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_02_bin3</td>
+      <td>C68_185</td>
       <td>3</td>
       <td>2</td>
       <td>221202</td>
@@ -795,9 +795,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s12_b3_S47_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_02_bin4</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_02_bin4</td>
+      <td>C68_185</td>
       <td>4</td>
       <td>2</td>
       <td>221202</td>
@@ -805,9 +805,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s12_b4_S48_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_03_bin1</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_03_bin1</td>
+      <td>C68_185</td>
       <td>1</td>
       <td>3</td>
       <td>221202</td>
@@ -815,9 +815,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s13_b1_S49_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_03_bin2</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_03_bin2</td>
+      <td>C68_185</td>
       <td>2</td>
       <td>3</td>
       <td>221202</td>
@@ -825,9 +825,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s13_b2_S50_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_03_bin3</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_03_bin3</td>
+      <td>C68_185</td>
       <td>3</td>
       <td>3</td>
       <td>221202</td>
@@ -835,9 +835,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s13_b3_S51_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_03_bin4</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_03_bin4</td>
+      <td>C68_185</td>
       <td>4</td>
       <td>3</td>
       <td>221202</td>
@@ -845,9 +845,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s13_b4_S52_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_04_bin1</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_04_bin1</td>
+      <td>C68_185</td>
       <td>1</td>
       <td>4</td>
       <td>221202</td>
@@ -855,9 +855,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s14_b1_S53_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_04_bin2</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_04_bin2</td>
+      <td>C68_185</td>
       <td>2</td>
       <td>4</td>
       <td>221202</td>
@@ -865,9 +865,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s14_b2_S50_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_04_bin3</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_04_bin3</td>
+      <td>C68_185</td>
       <td>3</td>
       <td>4</td>
       <td>221202</td>
@@ -875,9 +875,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s14_b3_S51_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_04_bin4</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_04_bin4</td>
+      <td>C68_185</td>
       <td>4</td>
       <td>4</td>
       <td>221202</td>
@@ -885,9 +885,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s14_b4_S56_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_05_bin1</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_05_bin1</td>
+      <td>C68_185</td>
       <td>1</td>
       <td>5</td>
       <td>221202</td>
@@ -895,9 +895,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s15_b1_S57_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_05_bin2</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_05_bin2</td>
+      <td>C68_185</td>
       <td>2</td>
       <td>5</td>
       <td>221202</td>
@@ -905,9 +905,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s15_b2_S52_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_05_bin3</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_05_bin3</td>
+      <td>C68_185</td>
       <td>3</td>
       <td>5</td>
       <td>221202</td>
@@ -915,9 +915,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s15_b3_S59_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_05_bin4</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_05_bin4</td>
+      <td>C68_185</td>
       <td>4</td>
       <td>5</td>
       <td>221202</td>
@@ -925,9 +925,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s15_b4_S60_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_06_bin1</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_06_bin1</td>
+      <td>C68_185</td>
       <td>1</td>
       <td>6</td>
       <td>221202</td>
@@ -935,9 +935,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b1_S61_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_06_bin2</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_06_bin2</td>
+      <td>C68_185</td>
       <td>2</td>
       <td>6</td>
       <td>221202</td>
@@ -945,9 +945,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b2_S62_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_06_bin3</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_06_bin3</td>
+      <td>C68_185</td>
       <td>3</td>
       <td>6</td>
       <td>221202</td>
@@ -955,9 +955,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b3_S63_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C185_06_bin4</td>
-      <td>268C185</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_185_06_bin4</td>
+      <td>C68_185</td>
       <td>4</td>
       <td>6</td>
       <td>221202</td>
@@ -965,9 +965,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b4_S64_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_01_bin1</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_01_bin1</td>
+      <td>C68_61</td>
       <td>1</td>
       <td>1</td>
       <td>221118</td>
@@ -975,9 +975,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s1_b1_S65_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_01_bin2</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_01_bin2</td>
+      <td>C68_61</td>
       <td>2</td>
       <td>1</td>
       <td>221118</td>
@@ -985,9 +985,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s1_b2_S66_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_01_bin3</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_01_bin3</td>
+      <td>C68_61</td>
       <td>3</td>
       <td>1</td>
       <td>221118</td>
@@ -995,9 +995,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s1_b3_S67_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_01_bin4</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_01_bin4</td>
+      <td>C68_61</td>
       <td>4</td>
       <td>1</td>
       <td>221118</td>
@@ -1005,9 +1005,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s1_b4_S68_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_02_bin1</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_02_bin1</td>
+      <td>C68_61</td>
       <td>1</td>
       <td>2</td>
       <td>221118</td>
@@ -1015,9 +1015,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s2_b1_S69_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_02_bin2</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_02_bin2</td>
+      <td>C68_61</td>
       <td>2</td>
       <td>2</td>
       <td>221118</td>
@@ -1025,9 +1025,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s2_b2_S70_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_02_bin3</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_02_bin3</td>
+      <td>C68_61</td>
       <td>3</td>
       <td>2</td>
       <td>221118</td>
@@ -1035,9 +1035,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s2_b3_S71_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_02_bin4</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_02_bin4</td>
+      <td>C68_61</td>
       <td>4</td>
       <td>2</td>
       <td>221118</td>
@@ -1045,9 +1045,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s2_b4_S72_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_03_bin1</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_03_bin1</td>
+      <td>C68_61</td>
       <td>1</td>
       <td>3</td>
       <td>221118</td>
@@ -1055,9 +1055,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s3_b1_S73_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_03_bin2</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_03_bin2</td>
+      <td>C68_61</td>
       <td>2</td>
       <td>3</td>
       <td>221118</td>
@@ -1065,9 +1065,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s3_b2_S74_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_03_bin3</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_03_bin3</td>
+      <td>C68_61</td>
       <td>3</td>
       <td>3</td>
       <td>221118</td>
@@ -1075,9 +1075,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s3_b3_S75_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_03_bin4</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_03_bin4</td>
+      <td>C68_61</td>
       <td>4</td>
       <td>3</td>
       <td>221118</td>
@@ -1085,9 +1085,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s3_b4_S76_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_04_bin1</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_04_bin1</td>
+      <td>C68_61</td>
       <td>1</td>
       <td>4</td>
       <td>221118</td>
@@ -1095,9 +1095,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s4_b1_S77_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_04_bin2</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_04_bin2</td>
+      <td>C68_61</td>
       <td>2</td>
       <td>4</td>
       <td>221118</td>
@@ -1105,9 +1105,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s4_b2_S78_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_04_bin3</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_04_bin3</td>
+      <td>C68_61</td>
       <td>3</td>
       <td>4</td>
       <td>221118</td>
@@ -1115,9 +1115,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s4_b3_S79_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_04_bin4</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_04_bin4</td>
+      <td>C68_61</td>
       <td>4</td>
       <td>4</td>
       <td>221118</td>
@@ -1125,9 +1125,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s4_b4_S80_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_05_bin1</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_05_bin1</td>
+      <td>C68_61</td>
       <td>1</td>
       <td>5</td>
       <td>221118</td>
@@ -1135,9 +1135,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s5_b1_S81_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_05_bin2</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_05_bin2</td>
+      <td>C68_61</td>
       <td>2</td>
       <td>5</td>
       <td>221118</td>
@@ -1145,9 +1145,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s5_b2_S82_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_05_bin3</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_05_bin3</td>
+      <td>C68_61</td>
       <td>3</td>
       <td>5</td>
       <td>221118</td>
@@ -1155,9 +1155,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s5_b3_S83_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_05_bin4</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_05_bin4</td>
+      <td>C68_61</td>
       <td>4</td>
       <td>5</td>
       <td>221118</td>
@@ -1165,9 +1165,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221118_s5_b4_S84_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_06_bin1</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_06_bin1</td>
+      <td>C68_61</td>
       <td>1</td>
       <td>6</td>
       <td>221118</td>
@@ -1175,9 +1175,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b1_S61_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_06_bin2</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_06_bin2</td>
+      <td>C68_61</td>
       <td>2</td>
       <td>6</td>
       <td>221118</td>
@@ -1185,9 +1185,9 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b2_S62_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_06_bin3</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_06_bin3</td>
+      <td>C68_61</td>
       <td>3</td>
       <td>6</td>
       <td>221118</td>
@@ -1195,14 +1195,1214 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b3_S63_R1_001.fastq.gz]</td>
     </tr>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>268C61_06_bin4</td>
-      <td>268C61</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_61_06_bin4</td>
+      <td>C68_61</td>
       <td>4</td>
       <td>6</td>
       <td>221118</td>
       <td>20</td>
       <td>[/uufs/chpc.utah.edu/common/home/starr-group1/sequencing/TNS/2022/221208_Overbaugh-mAb-breadth-v1/221202_s16_b4_S64_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_01_bin1</td>
+      <td>C68_10</td>
+      <td>1</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>529191</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_01_bin2</td>
+      <td>C68_10</td>
+      <td>2</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>136022</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_01_bin3</td>
+      <td>C68_10</td>
+      <td>3</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>45301</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_01_bin4</td>
+      <td>C68_10</td>
+      <td>4</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>267777</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_02_bin1</td>
+      <td>C68_10</td>
+      <td>1</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>771307</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s2-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_02_bin2</td>
+      <td>C68_10</td>
+      <td>2</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>122630</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s2-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_02_bin3</td>
+      <td>C68_10</td>
+      <td>3</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>49361</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s2-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_02_bin4</td>
+      <td>C68_10</td>
+      <td>4</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>349525</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s2-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_03_bin1</td>
+      <td>C68_10</td>
+      <td>1</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>676250</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s3-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_03_bin2</td>
+      <td>C68_10</td>
+      <td>2</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>107356</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s3-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_03_bin3</td>
+      <td>C68_10</td>
+      <td>3</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>96806</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s3-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_03_bin4</td>
+      <td>C68_10</td>
+      <td>4</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>218219</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s3-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_04_bin1</td>
+      <td>C68_10</td>
+      <td>1</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>737540</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s4-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_04_bin2</td>
+      <td>C68_10</td>
+      <td>2</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>139349</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s4-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_04_bin3</td>
+      <td>C68_10</td>
+      <td>3</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>237190</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s4-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_04_bin4</td>
+      <td>C68_10</td>
+      <td>4</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>11</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s4-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_05_bin1</td>
+      <td>C68_10</td>
+      <td>1</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>780785</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s5-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_05_bin2</td>
+      <td>C68_10</td>
+      <td>2</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>267667</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s5-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_05_bin3</td>
+      <td>C68_10</td>
+      <td>3</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>31</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s5-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_05_bin4</td>
+      <td>C68_10</td>
+      <td>4</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>5</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s5-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_06_bin1</td>
+      <td>C68_10</td>
+      <td>1</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>958469</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_06_bin2</td>
+      <td>C68_10</td>
+      <td>2</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>57664</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_06_bin3</td>
+      <td>C68_10</td>
+      <td>3</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>25</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_10_06_bin4</td>
+      <td>C68_10</td>
+      <td>4</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>8</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_01_bin1</td>
+      <td>C68_88</td>
+      <td>1</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>178437</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s6-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_01_bin2</td>
+      <td>C68_88</td>
+      <td>2</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>31371</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s6-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_01_bin3</td>
+      <td>C68_88</td>
+      <td>3</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>110079</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s6-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_01_bin4</td>
+      <td>C68_88</td>
+      <td>4</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>891239</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s6-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_02_bin1</td>
+      <td>C68_88</td>
+      <td>1</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>195821</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s7-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_02_bin2</td>
+      <td>C68_88</td>
+      <td>2</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>42912</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s7-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_02_bin3</td>
+      <td>C68_88</td>
+      <td>3</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>120238</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s7-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_02_bin4</td>
+      <td>C68_88</td>
+      <td>4</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>761567</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s7-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_03_bin1</td>
+      <td>C68_88</td>
+      <td>1</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>183326</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s8-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_03_bin2</td>
+      <td>C68_88</td>
+      <td>2</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>96875</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s8-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_03_bin3</td>
+      <td>C68_88</td>
+      <td>3</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>597856</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s8-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_03_bin4</td>
+      <td>C68_88</td>
+      <td>4</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>157788</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s8-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_04_bin1</td>
+      <td>C68_88</td>
+      <td>1</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>269709</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s9-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_04_bin2</td>
+      <td>C68_88</td>
+      <td>2</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>654419</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s9-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_04_bin3</td>
+      <td>C68_88</td>
+      <td>3</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>93107</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s9-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_04_bin4</td>
+      <td>C68_88</td>
+      <td>4</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>10</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s9-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_05_bin1</td>
+      <td>C68_88</td>
+      <td>1</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>801936</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s10-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_05_bin2</td>
+      <td>C68_88</td>
+      <td>2</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>210116</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s10-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_05_bin3</td>
+      <td>C68_88</td>
+      <td>3</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>10</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s10-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_05_bin4</td>
+      <td>C68_88</td>
+      <td>4</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>4</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s10-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_06_bin1</td>
+      <td>C68_88</td>
+      <td>1</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>958469</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_06_bin2</td>
+      <td>C68_88</td>
+      <td>2</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>57664</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_06_bin3</td>
+      <td>C68_88</td>
+      <td>3</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>25</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_88_06_bin4</td>
+      <td>C68_88</td>
+      <td>4</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>8</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_01_bin1</td>
+      <td>C68_201</td>
+      <td>1</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>121305</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s11-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_01_bin2</td>
+      <td>C68_201</td>
+      <td>2</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>67243</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s11-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_01_bin3</td>
+      <td>C68_201</td>
+      <td>3</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>187593</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s11-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_01_bin4</td>
+      <td>C68_201</td>
+      <td>4</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>708177</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s11-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_02_bin1</td>
+      <td>C68_201</td>
+      <td>1</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>171488</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s12-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_02_bin2</td>
+      <td>C68_201</td>
+      <td>2</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>86309</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s12-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_02_bin3</td>
+      <td>C68_201</td>
+      <td>3</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>136686</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s12-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_02_bin4</td>
+      <td>C68_201</td>
+      <td>4</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>681228</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s12-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_03_bin1</td>
+      <td>C68_201</td>
+      <td>1</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>253189</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s13-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_03_bin2</td>
+      <td>C68_201</td>
+      <td>2</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>143133</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s13-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_03_bin3</td>
+      <td>C68_201</td>
+      <td>3</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>261641</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s13-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_03_bin4</td>
+      <td>C68_201</td>
+      <td>4</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>452600</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s13-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_04_bin1</td>
+      <td>C68_201</td>
+      <td>1</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>358606</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s14-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_04_bin2</td>
+      <td>C68_201</td>
+      <td>2</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>278871</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s14-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_04_bin3</td>
+      <td>C68_201</td>
+      <td>3</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>414805</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s14-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_04_bin4</td>
+      <td>C68_201</td>
+      <td>4</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>14</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s14-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_05_bin1</td>
+      <td>C68_201</td>
+      <td>1</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>613713</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s15-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_05_bin2</td>
+      <td>C68_201</td>
+      <td>2</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>404971</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s15-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_05_bin3</td>
+      <td>C68_201</td>
+      <td>3</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>20</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s15-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_05_bin4</td>
+      <td>C68_201</td>
+      <td>4</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>8</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s15-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_06_bin1</td>
+      <td>C68_201</td>
+      <td>1</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>958469</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_06_bin2</td>
+      <td>C68_201</td>
+      <td>2</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>57664</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_06_bin3</td>
+      <td>C68_201</td>
+      <td>3</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>25</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_201_06_bin4</td>
+      <td>C68_201</td>
+      <td>4</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>8</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_01_bin1</td>
+      <td>C68_239</td>
+      <td>1</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>442648</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s16-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_01_bin2</td>
+      <td>C68_239</td>
+      <td>2</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>74476</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s16-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_01_bin3</td>
+      <td>C68_239</td>
+      <td>3</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>113342</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s16-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_01_bin4</td>
+      <td>C68_239</td>
+      <td>4</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>413084</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s16-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_02_bin1</td>
+      <td>C68_239</td>
+      <td>1</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>479258</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s17-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_02_bin2</td>
+      <td>C68_239</td>
+      <td>2</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>76885</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s17-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_02_bin3</td>
+      <td>C68_239</td>
+      <td>3</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>142358</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s17-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_02_bin4</td>
+      <td>C68_239</td>
+      <td>4</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>393355</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s17-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_03_bin1</td>
+      <td>C68_239</td>
+      <td>1</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>485513</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s18-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_03_bin2</td>
+      <td>C68_239</td>
+      <td>2</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>158118</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s18-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_03_bin3</td>
+      <td>C68_239</td>
+      <td>3</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>261377</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s18-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_03_bin4</td>
+      <td>C68_239</td>
+      <td>4</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>131140</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s18-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_04_bin1</td>
+      <td>C68_239</td>
+      <td>1</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>670230</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s19-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_04_bin2</td>
+      <td>C68_239</td>
+      <td>2</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>285801</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s19-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_04_bin3</td>
+      <td>C68_239</td>
+      <td>3</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>136882</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s19-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_04_bin4</td>
+      <td>C68_239</td>
+      <td>4</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>12</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s19-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_05_bin1</td>
+      <td>C68_239</td>
+      <td>1</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>871682</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s20-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_05_bin2</td>
+      <td>C68_239</td>
+      <td>2</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>164936</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s20-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_05_bin3</td>
+      <td>C68_239</td>
+      <td>3</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>19</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s20-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_05_bin4</td>
+      <td>C68_239</td>
+      <td>4</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>3</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s20-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_06_bin1</td>
+      <td>C68_239</td>
+      <td>1</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>958469</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_06_bin2</td>
+      <td>C68_239</td>
+      <td>2</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>57664</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_06_bin3</td>
+      <td>C68_239</td>
+      <td>3</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>25</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_239_06_bin4</td>
+      <td>C68_239</td>
+      <td>4</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>8</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_01_bin1</td>
+      <td>C68_490</td>
+      <td>1</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>399</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s21-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_01_bin2</td>
+      <td>C68_490</td>
+      <td>2</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>746</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s21-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_01_bin3</td>
+      <td>C68_490</td>
+      <td>3</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>54325</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s21-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_01_bin4</td>
+      <td>C68_490</td>
+      <td>4</td>
+      <td>1</td>
+      <td>231026</td>
+      <td>962156</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s21-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_02_bin1</td>
+      <td>C68_490</td>
+      <td>1</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>519</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s22-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_02_bin2</td>
+      <td>C68_490</td>
+      <td>2</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>831</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s22-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_02_bin3</td>
+      <td>C68_490</td>
+      <td>3</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>42015</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s22-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_02_bin4</td>
+      <td>C68_490</td>
+      <td>4</td>
+      <td>2</td>
+      <td>231026</td>
+      <td>975491</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s22-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_03_bin1</td>
+      <td>C68_490</td>
+      <td>1</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>951</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s23-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_03_bin2</td>
+      <td>C68_490</td>
+      <td>2</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>6187</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s23-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_03_bin3</td>
+      <td>C68_490</td>
+      <td>3</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>320463</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s23-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_03_bin4</td>
+      <td>C68_490</td>
+      <td>4</td>
+      <td>3</td>
+      <td>231026</td>
+      <td>753502</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s23-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_04_bin1</td>
+      <td>C68_490</td>
+      <td>1</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>4738</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s24-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_04_bin2</td>
+      <td>C68_490</td>
+      <td>2</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>300303</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s24-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_04_bin3</td>
+      <td>C68_490</td>
+      <td>3</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>766215</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s24-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_04_bin4</td>
+      <td>C68_490</td>
+      <td>4</td>
+      <td>4</td>
+      <td>231026</td>
+      <td>5</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s24-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_05_bin1</td>
+      <td>C68_490</td>
+      <td>1</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>366144</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s25-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_05_bin2</td>
+      <td>C68_490</td>
+      <td>2</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>686467</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s25-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_05_bin3</td>
+      <td>C68_490</td>
+      <td>3</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>27</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s25-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_05_bin4</td>
+      <td>C68_490</td>
+      <td>4</td>
+      <td>5</td>
+      <td>231026</td>
+      <td>7</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s25-b4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_06_bin1</td>
+      <td>C68_490</td>
+      <td>1</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>958469</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_06_bin2</td>
+      <td>C68_490</td>
+      <td>2</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>57664</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_06_bin3</td>
+      <td>C68_490</td>
+      <td>3</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>25</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_490_06_bin4</td>
+      <td>C68_490</td>
+      <td>4</td>
+      <td>6</td>
+      <td>231026</td>
+      <td>8</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s27-b4_R1_001.fastq.gz]</td>
     </tr>
   </tbody>
 </table>
@@ -1320,8 +2520,8 @@ display(HTML(
   </thead>
   <tbody>
     <tr>
-      <td>lib47_SARSr-wts</td>
-      <td>31372</td>
+      <td>lib61_SARSr-wts</td>
+      <td>31416</td>
     </tr>
   </tbody>
 </table>
@@ -1396,32 +2596,32 @@ display(HTML(fates.head().to_html(index=False)))
     <tr>
       <td>TATACCTACAACCAGG</td>
       <td>401</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>AATGGAATATTCACAT</td>
       <td>392</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>CTGCCTTACCATGTCC</td>
       <td>392</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>GCCTACACCTAGGCTA</td>
       <td>379</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>GCCCCCCACGAAGCTT</td>
       <td>361</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
   </tbody>
 </table>
@@ -1444,32 +2644,32 @@ display(HTML(fates.head().to_html(index=False)))
     <tr>
       <td>valid barcode</td>
       <td>901532</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>low quality barcode</td>
       <td>309435</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>invalid barcode</td>
       <td>263039</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>unparseable barcode</td>
       <td>25644</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
     <tr>
       <td>failed chastity filter</td>
       <td>0</td>
-      <td>lib47_SARSr-wts</td>
-      <td>268C3_01_bin1</td>
+      <td>lib61_SARSr-wts</td>
+      <td>C68_3_01_bin1</td>
     </tr>
   </tbody>
 </table>
@@ -1532,8 +2732,200 @@ display(HTML(fates
   </thead>
   <tbody>
     <tr>
-      <th rowspan="96" valign="top">lib47_SARSr-wts</th>
-      <th>268C183_01_bin1</th>
+      <th rowspan="216" valign="top">lib61_SARSr-wts</th>
+      <th>C68_10_01_bin1</th>
+      <td>0</td>
+      <td>2843</td>
+      <td>1539</td>
+      <td>326</td>
+      <td>11528</td>
+    </tr>
+    <tr>
+      <th>C68_10_01_bin2</th>
+      <td>0</td>
+      <td>12776</td>
+      <td>7355</td>
+      <td>1222</td>
+      <td>51524</td>
+    </tr>
+    <tr>
+      <th>C68_10_01_bin3</th>
+      <td>0</td>
+      <td>122512</td>
+      <td>61335</td>
+      <td>6979</td>
+      <td>427603</td>
+    </tr>
+    <tr>
+      <th>C68_10_01_bin4</th>
+      <td>0</td>
+      <td>83139</td>
+      <td>89583</td>
+      <td>9429</td>
+      <td>640185</td>
+    </tr>
+    <tr>
+      <th>C68_10_02_bin1</th>
+      <td>0</td>
+      <td>1086635</td>
+      <td>547514</td>
+      <td>113468</td>
+      <td>4194690</td>
+    </tr>
+    <tr>
+      <th>C68_10_02_bin2</th>
+      <td>0</td>
+      <td>118861</td>
+      <td>67350</td>
+      <td>11071</td>
+      <td>444555</td>
+    </tr>
+    <tr>
+      <th>C68_10_02_bin3</th>
+      <td>0</td>
+      <td>144819</td>
+      <td>68531</td>
+      <td>9460</td>
+      <td>546869</td>
+    </tr>
+    <tr>
+      <th>C68_10_02_bin4</th>
+      <td>0</td>
+      <td>786482</td>
+      <td>862227</td>
+      <td>93215</td>
+      <td>5975331</td>
+    </tr>
+    <tr>
+      <th>C68_10_03_bin1</th>
+      <td>0</td>
+      <td>2923917</td>
+      <td>1545347</td>
+      <td>280894</td>
+      <td>11237506</td>
+    </tr>
+    <tr>
+      <th>C68_10_03_bin2</th>
+      <td>0</td>
+      <td>479494</td>
+      <td>270194</td>
+      <td>39499</td>
+      <td>1810489</td>
+    </tr>
+    <tr>
+      <th>C68_10_03_bin3</th>
+      <td>0</td>
+      <td>340382</td>
+      <td>244519</td>
+      <td>31338</td>
+      <td>1704261</td>
+    </tr>
+    <tr>
+      <th>C68_10_03_bin4</th>
+      <td>0</td>
+      <td>676171</td>
+      <td>769721</td>
+      <td>79662</td>
+      <td>5632604</td>
+    </tr>
+    <tr>
+      <th>C68_10_04_bin1</th>
+      <td>0</td>
+      <td>2484368</td>
+      <td>1401603</td>
+      <td>242008</td>
+      <td>9554246</td>
+    </tr>
+    <tr>
+      <th>C68_10_04_bin2</th>
+      <td>0</td>
+      <td>452896</td>
+      <td>296406</td>
+      <td>39095</td>
+      <td>1830182</td>
+    </tr>
+    <tr>
+      <th>C68_10_04_bin3</th>
+      <td>0</td>
+      <td>536852</td>
+      <td>623750</td>
+      <td>64943</td>
+      <td>4672596</td>
+    </tr>
+    <tr>
+      <th>C68_10_04_bin4</th>
+      <td>0</td>
+      <td>217</td>
+      <td>299</td>
+      <td>21</td>
+      <td>505</td>
+    </tr>
+    <tr>
+      <th>C68_10_05_bin1</th>
+      <td>0</td>
+      <td>3622368</td>
+      <td>2311239</td>
+      <td>350792</td>
+      <td>14200182</td>
+    </tr>
+    <tr>
+      <th>C68_10_05_bin2</th>
+      <td>0</td>
+      <td>677941</td>
+      <td>676156</td>
+      <td>77779</td>
+      <td>4739379</td>
+    </tr>
+    <tr>
+      <th>C68_10_05_bin3</th>
+      <td>0</td>
+      <td>456</td>
+      <td>258</td>
+      <td>25</td>
+      <td>763</td>
+    </tr>
+    <tr>
+      <th>C68_10_05_bin4</th>
+      <td>0</td>
+      <td>231</td>
+      <td>1815</td>
+      <td>4902</td>
+      <td>322</td>
+    </tr>
+    <tr>
+      <th>C68_10_06_bin1</th>
+      <td>0</td>
+      <td>633073</td>
+      <td>418519</td>
+      <td>60233</td>
+      <td>2807921</td>
+    </tr>
+    <tr>
+      <th>C68_10_06_bin2</th>
+      <td>0</td>
+      <td>1076080</td>
+      <td>576466</td>
+      <td>96773</td>
+      <td>4794288</td>
+    </tr>
+    <tr>
+      <th>C68_10_06_bin3</th>
+      <td>0</td>
+      <td>893</td>
+      <td>399</td>
+      <td>56</td>
+      <td>2646</td>
+    </tr>
+    <tr>
+      <th>C68_10_06_bin4</th>
+      <td>0</td>
+      <td>494</td>
+      <td>100</td>
+      <td>1741</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>C68_183_01_bin1</th>
       <td>0</td>
       <td>72705</td>
       <td>73325</td>
@@ -1541,7 +2933,7 @@ display(HTML(fates
       <td>188843</td>
     </tr>
     <tr>
-      <th>268C183_01_bin2</th>
+      <th>C68_183_01_bin2</th>
       <td>0</td>
       <td>61987</td>
       <td>74827</td>
@@ -1549,7 +2941,7 @@ display(HTML(fates
       <td>205951</td>
     </tr>
     <tr>
-      <th>268C183_01_bin3</th>
+      <th>C68_183_01_bin3</th>
       <td>0</td>
       <td>496225</td>
       <td>390705</td>
@@ -1557,7 +2949,7 @@ display(HTML(fates
       <td>1817477</td>
     </tr>
     <tr>
-      <th>268C183_01_bin4</th>
+      <th>C68_183_01_bin4</th>
       <td>0</td>
       <td>621878</td>
       <td>497453</td>
@@ -1565,7 +2957,7 @@ display(HTML(fates
       <td>2384495</td>
     </tr>
     <tr>
-      <th>268C183_02_bin1</th>
+      <th>C68_183_02_bin1</th>
       <td>0</td>
       <td>111273</td>
       <td>127378</td>
@@ -1573,7 +2965,7 @@ display(HTML(fates
       <td>350876</td>
     </tr>
     <tr>
-      <th>268C183_02_bin2</th>
+      <th>C68_183_02_bin2</th>
       <td>0</td>
       <td>56388</td>
       <td>73969</td>
@@ -1581,7 +2973,7 @@ display(HTML(fates
       <td>216787</td>
     </tr>
     <tr>
-      <th>268C183_02_bin3</th>
+      <th>C68_183_02_bin3</th>
       <td>0</td>
       <td>646379</td>
       <td>481597</td>
@@ -1589,7 +2981,7 @@ display(HTML(fates
       <td>2202637</td>
     </tr>
     <tr>
-      <th>268C183_02_bin4</th>
+      <th>C68_183_02_bin4</th>
       <td>0</td>
       <td>635637</td>
       <td>537211</td>
@@ -1597,7 +2989,7 @@ display(HTML(fates
       <td>2591847</td>
     </tr>
     <tr>
-      <th>268C183_03_bin1</th>
+      <th>C68_183_03_bin1</th>
       <td>0</td>
       <td>616855</td>
       <td>464660</td>
@@ -1605,7 +2997,7 @@ display(HTML(fates
       <td>2128751</td>
     </tr>
     <tr>
-      <th>268C183_03_bin2</th>
+      <th>C68_183_03_bin2</th>
       <td>0</td>
       <td>132832</td>
       <td>160002</td>
@@ -1613,7 +3005,7 @@ display(HTML(fates
       <td>451309</td>
     </tr>
     <tr>
-      <th>268C183_03_bin3</th>
+      <th>C68_183_03_bin3</th>
       <td>0</td>
       <td>592802</td>
       <td>495479</td>
@@ -1621,7 +3013,7 @@ display(HTML(fates
       <td>2371531</td>
     </tr>
     <tr>
-      <th>268C183_03_bin4</th>
+      <th>C68_183_03_bin4</th>
       <td>0</td>
       <td>4123</td>
       <td>6606</td>
@@ -1629,7 +3021,7 @@ display(HTML(fates
       <td>19752</td>
     </tr>
     <tr>
-      <th>268C183_04_bin1</th>
+      <th>C68_183_04_bin1</th>
       <td>0</td>
       <td>223637</td>
       <td>168403</td>
@@ -1637,7 +3029,7 @@ display(HTML(fates
       <td>780107</td>
     </tr>
     <tr>
-      <th>268C183_04_bin2</th>
+      <th>C68_183_04_bin2</th>
       <td>0</td>
       <td>230816</td>
       <td>310681</td>
@@ -1645,7 +3037,7 @@ display(HTML(fates
       <td>899000</td>
     </tr>
     <tr>
-      <th>268C183_04_bin3</th>
+      <th>C68_183_04_bin3</th>
       <td>0</td>
       <td>12937</td>
       <td>21444</td>
@@ -1653,7 +3045,7 @@ display(HTML(fates
       <td>52505</td>
     </tr>
     <tr>
-      <th>268C183_04_bin4</th>
+      <th>C68_183_04_bin4</th>
       <td>0</td>
       <td>776</td>
       <td>618</td>
@@ -1661,7 +3053,7 @@ display(HTML(fates
       <td>377</td>
     </tr>
     <tr>
-      <th>268C183_05_bin1</th>
+      <th>C68_183_05_bin1</th>
       <td>0</td>
       <td>589355</td>
       <td>456843</td>
@@ -1669,7 +3061,7 @@ display(HTML(fates
       <td>2121838</td>
     </tr>
     <tr>
-      <th>268C183_05_bin2</th>
+      <th>C68_183_05_bin2</th>
       <td>0</td>
       <td>81587</td>
       <td>112937</td>
@@ -1677,7 +3069,7 @@ display(HTML(fates
       <td>324812</td>
     </tr>
     <tr>
-      <th>268C183_05_bin3</th>
+      <th>C68_183_05_bin3</th>
       <td>0</td>
       <td>7640</td>
       <td>2481</td>
@@ -1685,7 +3077,7 @@ display(HTML(fates
       <td>73</td>
     </tr>
     <tr>
-      <th>268C183_05_bin4</th>
+      <th>C68_183_05_bin4</th>
       <td>0</td>
       <td>13</td>
       <td>120</td>
@@ -1693,7 +3085,7 @@ display(HTML(fates
       <td>46</td>
     </tr>
     <tr>
-      <th>268C183_06_bin1</th>
+      <th>C68_183_06_bin1</th>
       <td>0</td>
       <td>612769</td>
       <td>809928</td>
@@ -1701,7 +3093,7 @@ display(HTML(fates
       <td>2290784</td>
     </tr>
     <tr>
-      <th>268C183_06_bin2</th>
+      <th>C68_183_06_bin2</th>
       <td>0</td>
       <td>71760</td>
       <td>96334</td>
@@ -1709,7 +3101,7 @@ display(HTML(fates
       <td>268451</td>
     </tr>
     <tr>
-      <th>268C183_06_bin3</th>
+      <th>C68_183_06_bin3</th>
       <td>0</td>
       <td>28</td>
       <td>157</td>
@@ -1717,7 +3109,7 @@ display(HTML(fates
       <td>69</td>
     </tr>
     <tr>
-      <th>268C183_06_bin4</th>
+      <th>C68_183_06_bin4</th>
       <td>0</td>
       <td>3</td>
       <td>3</td>
@@ -1725,7 +3117,7 @@ display(HTML(fates
       <td>2</td>
     </tr>
     <tr>
-      <th>268C185_01_bin1</th>
+      <th>C68_185_01_bin1</th>
       <td>0</td>
       <td>13313</td>
       <td>4818</td>
@@ -1733,7 +3125,7 @@ display(HTML(fates
       <td>5463</td>
     </tr>
     <tr>
-      <th>268C185_01_bin2</th>
+      <th>C68_185_01_bin2</th>
       <td>0</td>
       <td>14725</td>
       <td>11380</td>
@@ -1741,7 +3133,7 @@ display(HTML(fates
       <td>28181</td>
     </tr>
     <tr>
-      <th>268C185_01_bin3</th>
+      <th>C68_185_01_bin3</th>
       <td>0</td>
       <td>85932</td>
       <td>99529</td>
@@ -1749,7 +3141,7 @@ display(HTML(fates
       <td>269045</td>
     </tr>
     <tr>
-      <th>268C185_01_bin4</th>
+      <th>C68_185_01_bin4</th>
       <td>0</td>
       <td>670468</td>
       <td>909471</td>
@@ -1757,7 +3149,7 @@ display(HTML(fates
       <td>2557637</td>
     </tr>
     <tr>
-      <th>268C185_02_bin1</th>
+      <th>C68_185_02_bin1</th>
       <td>0</td>
       <td>28673</td>
       <td>14318</td>
@@ -1765,7 +3157,7 @@ display(HTML(fates
       <td>26446</td>
     </tr>
     <tr>
-      <th>268C185_02_bin2</th>
+      <th>C68_185_02_bin2</th>
       <td>0</td>
       <td>8453</td>
       <td>8903</td>
@@ -1773,7 +3165,7 @@ display(HTML(fates
       <td>23979</td>
     </tr>
     <tr>
-      <th>268C185_02_bin3</th>
+      <th>C68_185_02_bin3</th>
       <td>0</td>
       <td>92031</td>
       <td>108992</td>
@@ -1781,7 +3173,7 @@ display(HTML(fates
       <td>300001</td>
     </tr>
     <tr>
-      <th>268C185_02_bin4</th>
+      <th>C68_185_02_bin4</th>
       <td>0</td>
       <td>611354</td>
       <td>817861</td>
@@ -1789,7 +3181,7 @@ display(HTML(fates
       <td>2334862</td>
     </tr>
     <tr>
-      <th>268C185_03_bin1</th>
+      <th>C68_185_03_bin1</th>
       <td>0</td>
       <td>68964</td>
       <td>57252</td>
@@ -1797,7 +3189,7 @@ display(HTML(fates
       <td>146226</td>
     </tr>
     <tr>
-      <th>268C185_03_bin2</th>
+      <th>C68_185_03_bin2</th>
       <td>0</td>
       <td>37585</td>
       <td>38600</td>
@@ -1805,7 +3197,7 @@ display(HTML(fates
       <td>104098</td>
     </tr>
     <tr>
-      <th>268C185_03_bin3</th>
+      <th>C68_185_03_bin3</th>
       <td>0</td>
       <td>241228</td>
       <td>316731</td>
@@ -1813,7 +3205,7 @@ display(HTML(fates
       <td>894201</td>
     </tr>
     <tr>
-      <th>268C185_03_bin4</th>
+      <th>C68_185_03_bin4</th>
       <td>0</td>
       <td>132676</td>
       <td>176874</td>
@@ -1821,7 +3213,7 @@ display(HTML(fates
       <td>513074</td>
     </tr>
     <tr>
-      <th>268C185_04_bin1</th>
+      <th>C68_185_04_bin1</th>
       <td>0</td>
       <td>41791</td>
       <td>38193</td>
@@ -1829,7 +3221,7 @@ display(HTML(fates
       <td>99126</td>
     </tr>
     <tr>
-      <th>268C185_04_bin2</th>
+      <th>C68_185_04_bin2</th>
       <td>0</td>
       <td>465247</td>
       <td>363370</td>
@@ -1837,7 +3229,7 @@ display(HTML(fates
       <td>1655309</td>
     </tr>
     <tr>
-      <th>268C185_04_bin3</th>
+      <th>C68_185_04_bin3</th>
       <td>0</td>
       <td>500978</td>
       <td>402459</td>
@@ -1845,7 +3237,7 @@ display(HTML(fates
       <td>1908234</td>
     </tr>
     <tr>
-      <th>268C185_04_bin4</th>
+      <th>C68_185_04_bin4</th>
       <td>0</td>
       <td>228</td>
       <td>280</td>
@@ -1853,7 +3245,7 @@ display(HTML(fates
       <td>751</td>
     </tr>
     <tr>
-      <th>268C185_05_bin1</th>
+      <th>C68_185_05_bin1</th>
       <td>0</td>
       <td>86137</td>
       <td>105029</td>
@@ -1861,7 +3253,7 @@ display(HTML(fates
       <td>300290</td>
     </tr>
     <tr>
-      <th>268C185_05_bin2</th>
+      <th>C68_185_05_bin2</th>
       <td>0</td>
       <td>466825</td>
       <td>375666</td>
@@ -1869,7 +3261,7 @@ display(HTML(fates
       <td>1751478</td>
     </tr>
     <tr>
-      <th>268C185_05_bin3</th>
+      <th>C68_185_05_bin3</th>
       <td>0</td>
       <td>39</td>
       <td>107</td>
@@ -1877,7 +3269,7 @@ display(HTML(fates
       <td>116</td>
     </tr>
     <tr>
-      <th>268C185_05_bin4</th>
+      <th>C68_185_05_bin4</th>
       <td>0</td>
       <td>37</td>
       <td>38</td>
@@ -1885,7 +3277,7 @@ display(HTML(fates
       <td>103</td>
     </tr>
     <tr>
-      <th>268C185_06_bin1</th>
+      <th>C68_185_06_bin1</th>
       <td>0</td>
       <td>612769</td>
       <td>809928</td>
@@ -1893,7 +3285,7 @@ display(HTML(fates
       <td>2290784</td>
     </tr>
     <tr>
-      <th>268C185_06_bin2</th>
+      <th>C68_185_06_bin2</th>
       <td>0</td>
       <td>71760</td>
       <td>96334</td>
@@ -1901,7 +3293,7 @@ display(HTML(fates
       <td>268451</td>
     </tr>
     <tr>
-      <th>268C185_06_bin3</th>
+      <th>C68_185_06_bin3</th>
       <td>0</td>
       <td>28</td>
       <td>157</td>
@@ -1909,7 +3301,7 @@ display(HTML(fates
       <td>69</td>
     </tr>
     <tr>
-      <th>268C185_06_bin4</th>
+      <th>C68_185_06_bin4</th>
       <td>0</td>
       <td>3</td>
       <td>3</td>
@@ -1917,7 +3309,391 @@ display(HTML(fates
       <td>2</td>
     </tr>
     <tr>
-      <th>268C3_01_bin1</th>
+      <th>C68_201_01_bin1</th>
+      <td>0</td>
+      <td>735000</td>
+      <td>459794</td>
+      <td>70536</td>
+      <td>2461908</td>
+    </tr>
+    <tr>
+      <th>C68_201_01_bin2</th>
+      <td>0</td>
+      <td>208209</td>
+      <td>119572</td>
+      <td>20905</td>
+      <td>736308</td>
+    </tr>
+    <tr>
+      <th>C68_201_01_bin3</th>
+      <td>0</td>
+      <td>804817</td>
+      <td>448957</td>
+      <td>88542</td>
+      <td>2893369</td>
+    </tr>
+    <tr>
+      <th>C68_201_01_bin4</th>
+      <td>0</td>
+      <td>2328942</td>
+      <td>1748631</td>
+      <td>232380</td>
+      <td>11739469</td>
+    </tr>
+    <tr>
+      <th>C68_201_02_bin1</th>
+      <td>0</td>
+      <td>773861</td>
+      <td>429130</td>
+      <td>75073</td>
+      <td>2784324</td>
+    </tr>
+    <tr>
+      <th>C68_201_02_bin2</th>
+      <td>0</td>
+      <td>456780</td>
+      <td>243599</td>
+      <td>42387</td>
+      <td>1636578</td>
+    </tr>
+    <tr>
+      <th>C68_201_02_bin3</th>
+      <td>0</td>
+      <td>750700</td>
+      <td>365911</td>
+      <td>110517</td>
+      <td>2618776</td>
+    </tr>
+    <tr>
+      <th>C68_201_02_bin4</th>
+      <td>0</td>
+      <td>2532846</td>
+      <td>2008105</td>
+      <td>217812</td>
+      <td>12899349</td>
+    </tr>
+    <tr>
+      <th>C68_201_03_bin1</th>
+      <td>0</td>
+      <td>1200585</td>
+      <td>684323</td>
+      <td>143082</td>
+      <td>4280361</td>
+    </tr>
+    <tr>
+      <th>C68_201_03_bin2</th>
+      <td>0</td>
+      <td>597569</td>
+      <td>321386</td>
+      <td>60128</td>
+      <td>2238443</td>
+    </tr>
+    <tr>
+      <th>C68_201_03_bin3</th>
+      <td>0</td>
+      <td>1223678</td>
+      <td>697431</td>
+      <td>105813</td>
+      <td>5510239</td>
+    </tr>
+    <tr>
+      <th>C68_201_03_bin4</th>
+      <td>0</td>
+      <td>201761</td>
+      <td>161429</td>
+      <td>17735</td>
+      <td>1107071</td>
+    </tr>
+    <tr>
+      <th>C68_201_04_bin1</th>
+      <td>0</td>
+      <td>4599410</td>
+      <td>2635237</td>
+      <td>510340</td>
+      <td>17145058</td>
+    </tr>
+    <tr>
+      <th>C68_201_04_bin2</th>
+      <td>0</td>
+      <td>1351753</td>
+      <td>901126</td>
+      <td>113718</td>
+      <td>5594602</td>
+    </tr>
+    <tr>
+      <th>C68_201_04_bin3</th>
+      <td>0</td>
+      <td>1420603</td>
+      <td>1216468</td>
+      <td>129268</td>
+      <td>7983624</td>
+    </tr>
+    <tr>
+      <th>C68_201_04_bin4</th>
+      <td>0</td>
+      <td>886</td>
+      <td>435</td>
+      <td>58</td>
+      <td>1124</td>
+    </tr>
+    <tr>
+      <th>C68_201_05_bin1</th>
+      <td>0</td>
+      <td>2950626</td>
+      <td>1991968</td>
+      <td>293033</td>
+      <td>11699770</td>
+    </tr>
+    <tr>
+      <th>C68_201_05_bin2</th>
+      <td>0</td>
+      <td>2335696</td>
+      <td>1915791</td>
+      <td>213907</td>
+      <td>12534788</td>
+    </tr>
+    <tr>
+      <th>C68_201_05_bin3</th>
+      <td>0</td>
+      <td>107</td>
+      <td>204</td>
+      <td>26</td>
+      <td>1724</td>
+    </tr>
+    <tr>
+      <th>C68_201_05_bin4</th>
+      <td>0</td>
+      <td>191</td>
+      <td>110</td>
+      <td>21</td>
+      <td>611</td>
+    </tr>
+    <tr>
+      <th>C68_201_06_bin1</th>
+      <td>0</td>
+      <td>633073</td>
+      <td>418519</td>
+      <td>60233</td>
+      <td>2807921</td>
+    </tr>
+    <tr>
+      <th>C68_201_06_bin2</th>
+      <td>0</td>
+      <td>1076080</td>
+      <td>576466</td>
+      <td>96773</td>
+      <td>4794288</td>
+    </tr>
+    <tr>
+      <th>C68_201_06_bin3</th>
+      <td>0</td>
+      <td>893</td>
+      <td>399</td>
+      <td>56</td>
+      <td>2646</td>
+    </tr>
+    <tr>
+      <th>C68_201_06_bin4</th>
+      <td>0</td>
+      <td>494</td>
+      <td>100</td>
+      <td>1741</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>C68_239_01_bin1</th>
+      <td>0</td>
+      <td>1932445</td>
+      <td>1454832</td>
+      <td>230270</td>
+      <td>9350494</td>
+    </tr>
+    <tr>
+      <th>C68_239_01_bin2</th>
+      <td>0</td>
+      <td>314271</td>
+      <td>194143</td>
+      <td>30965</td>
+      <td>1482186</td>
+    </tr>
+    <tr>
+      <th>C68_239_01_bin3</th>
+      <td>0</td>
+      <td>472649</td>
+      <td>296092</td>
+      <td>42155</td>
+      <td>1946047</td>
+    </tr>
+    <tr>
+      <th>C68_239_01_bin4</th>
+      <td>0</td>
+      <td>2015177</td>
+      <td>1402220</td>
+      <td>169252</td>
+      <td>8802458</td>
+    </tr>
+    <tr>
+      <th>C68_239_02_bin1</th>
+      <td>0</td>
+      <td>1890250</td>
+      <td>1422761</td>
+      <td>220196</td>
+      <td>9269238</td>
+    </tr>
+    <tr>
+      <th>C68_239_02_bin2</th>
+      <td>0</td>
+      <td>263958</td>
+      <td>206697</td>
+      <td>32805</td>
+      <td>1319941</td>
+    </tr>
+    <tr>
+      <th>C68_239_02_bin3</th>
+      <td>0</td>
+      <td>634197</td>
+      <td>381473</td>
+      <td>51566</td>
+      <td>2254461</td>
+    </tr>
+    <tr>
+      <th>C68_239_02_bin4</th>
+      <td>0</td>
+      <td>1592040</td>
+      <td>1073591</td>
+      <td>138898</td>
+      <td>7050112</td>
+    </tr>
+    <tr>
+      <th>C68_239_03_bin1</th>
+      <td>0</td>
+      <td>2042325</td>
+      <td>1498790</td>
+      <td>243572</td>
+      <td>9930687</td>
+    </tr>
+    <tr>
+      <th>C68_239_03_bin2</th>
+      <td>0</td>
+      <td>674549</td>
+      <td>372158</td>
+      <td>63195</td>
+      <td>2725417</td>
+    </tr>
+    <tr>
+      <th>C68_239_03_bin3</th>
+      <td>0</td>
+      <td>1318647</td>
+      <td>769230</td>
+      <td>100485</td>
+      <td>5135203</td>
+    </tr>
+    <tr>
+      <th>C68_239_03_bin4</th>
+      <td>0</td>
+      <td>564649</td>
+      <td>452677</td>
+      <td>52596</td>
+      <td>3005836</td>
+    </tr>
+    <tr>
+      <th>C68_239_04_bin1</th>
+      <td>0</td>
+      <td>2328685</td>
+      <td>1719587</td>
+      <td>268982</td>
+      <td>10994936</td>
+    </tr>
+    <tr>
+      <th>C68_239_04_bin2</th>
+      <td>0</td>
+      <td>1086671</td>
+      <td>647966</td>
+      <td>90203</td>
+      <td>4320789</td>
+    </tr>
+    <tr>
+      <th>C68_239_04_bin3</th>
+      <td>0</td>
+      <td>380615</td>
+      <td>244892</td>
+      <td>35435</td>
+      <td>2078147</td>
+    </tr>
+    <tr>
+      <th>C68_239_04_bin4</th>
+      <td>0</td>
+      <td>331</td>
+      <td>94</td>
+      <td>15</td>
+      <td>278</td>
+    </tr>
+    <tr>
+      <th>C68_239_05_bin1</th>
+      <td>0</td>
+      <td>1849757</td>
+      <td>842711</td>
+      <td>200497</td>
+      <td>8386061</td>
+    </tr>
+    <tr>
+      <th>C68_239_05_bin2</th>
+      <td>0</td>
+      <td>553235</td>
+      <td>413328</td>
+      <td>52991</td>
+      <td>2735191</td>
+    </tr>
+    <tr>
+      <th>C68_239_05_bin3</th>
+      <td>0</td>
+      <td>53</td>
+      <td>95</td>
+      <td>63</td>
+      <td>388</td>
+    </tr>
+    <tr>
+      <th>C68_239_05_bin4</th>
+      <td>0</td>
+      <td>31</td>
+      <td>16</td>
+      <td>5</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>C68_239_06_bin1</th>
+      <td>0</td>
+      <td>633073</td>
+      <td>418519</td>
+      <td>60233</td>
+      <td>2807921</td>
+    </tr>
+    <tr>
+      <th>C68_239_06_bin2</th>
+      <td>0</td>
+      <td>1076080</td>
+      <td>576466</td>
+      <td>96773</td>
+      <td>4794288</td>
+    </tr>
+    <tr>
+      <th>C68_239_06_bin3</th>
+      <td>0</td>
+      <td>893</td>
+      <td>399</td>
+      <td>56</td>
+      <td>2646</td>
+    </tr>
+    <tr>
+      <th>C68_239_06_bin4</th>
+      <td>0</td>
+      <td>494</td>
+      <td>100</td>
+      <td>1741</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>C68_3_01_bin1</th>
       <td>0</td>
       <td>263039</td>
       <td>309435</td>
@@ -1925,7 +3701,7 @@ display(HTML(fates
       <td>901532</td>
     </tr>
     <tr>
-      <th>268C3_01_bin2</th>
+      <th>C68_3_01_bin2</th>
       <td>0</td>
       <td>744397</td>
       <td>575124</td>
@@ -1933,7 +3709,7 @@ display(HTML(fates
       <td>2715075</td>
     </tr>
     <tr>
-      <th>268C3_01_bin3</th>
+      <th>C68_3_01_bin3</th>
       <td>0</td>
       <td>25727</td>
       <td>38938</td>
@@ -1941,7 +3717,7 @@ display(HTML(fates
       <td>108130</td>
     </tr>
     <tr>
-      <th>268C3_01_bin4</th>
+      <th>C68_3_01_bin4</th>
       <td>0</td>
       <td>479992</td>
       <td>487322</td>
@@ -1949,7 +3725,7 @@ display(HTML(fates
       <td>2408136</td>
     </tr>
     <tr>
-      <th>268C3_02_bin1</th>
+      <th>C68_3_02_bin1</th>
       <td>0</td>
       <td>473990</td>
       <td>354024</td>
@@ -1957,7 +3733,7 @@ display(HTML(fates
       <td>1633297</td>
     </tr>
     <tr>
-      <th>268C3_02_bin2</th>
+      <th>C68_3_02_bin2</th>
       <td>0</td>
       <td>610739</td>
       <td>477282</td>
@@ -1965,7 +3741,7 @@ display(HTML(fates
       <td>2240585</td>
     </tr>
     <tr>
-      <th>268C3_02_bin3</th>
+      <th>C68_3_02_bin3</th>
       <td>0</td>
       <td>24272</td>
       <td>42034</td>
@@ -1973,7 +3749,7 @@ display(HTML(fates
       <td>122478</td>
     </tr>
     <tr>
-      <th>268C3_02_bin4</th>
+      <th>C68_3_02_bin4</th>
       <td>0</td>
       <td>81310</td>
       <td>127069</td>
@@ -1981,7 +3757,7 @@ display(HTML(fates
       <td>389142</td>
     </tr>
     <tr>
-      <th>268C3_03_bin1</th>
+      <th>C68_3_03_bin1</th>
       <td>0</td>
       <td>460632</td>
       <td>355244</td>
@@ -1989,7 +3765,7 @@ display(HTML(fates
       <td>1621178</td>
     </tr>
     <tr>
-      <th>268C3_03_bin2</th>
+      <th>C68_3_03_bin2</th>
       <td>0</td>
       <td>73164</td>
       <td>100692</td>
@@ -1997,7 +3773,7 @@ display(HTML(fates
       <td>282459</td>
     </tr>
     <tr>
-      <th>268C3_03_bin3</th>
+      <th>C68_3_03_bin3</th>
       <td>0</td>
       <td>57794</td>
       <td>89272</td>
@@ -2005,7 +3781,7 @@ display(HTML(fates
       <td>261606</td>
     </tr>
     <tr>
-      <th>268C3_03_bin4</th>
+      <th>C68_3_03_bin4</th>
       <td>0</td>
       <td>17354</td>
       <td>27123</td>
@@ -2013,7 +3789,7 @@ display(HTML(fates
       <td>83345</td>
     </tr>
     <tr>
-      <th>268C3_04_bin1</th>
+      <th>C68_3_04_bin1</th>
       <td>0</td>
       <td>561652</td>
       <td>708668</td>
@@ -2021,7 +3797,7 @@ display(HTML(fates
       <td>1993286</td>
     </tr>
     <tr>
-      <th>268C3_04_bin2</th>
+      <th>C68_3_04_bin2</th>
       <td>0</td>
       <td>129720</td>
       <td>176057</td>
@@ -2029,7 +3805,7 @@ display(HTML(fates
       <td>508851</td>
     </tr>
     <tr>
-      <th>268C3_04_bin3</th>
+      <th>C68_3_04_bin3</th>
       <td>0</td>
       <td>27170</td>
       <td>43684</td>
@@ -2037,7 +3813,7 @@ display(HTML(fates
       <td>131211</td>
     </tr>
     <tr>
-      <th>268C3_04_bin4</th>
+      <th>C68_3_04_bin4</th>
       <td>0</td>
       <td>77</td>
       <td>79</td>
@@ -2045,7 +3821,7 @@ display(HTML(fates
       <td>208</td>
     </tr>
     <tr>
-      <th>268C3_05_bin1</th>
+      <th>C68_3_05_bin1</th>
       <td>0</td>
       <td>413466</td>
       <td>522421</td>
@@ -2053,7 +3829,7 @@ display(HTML(fates
       <td>1495242</td>
     </tr>
     <tr>
-      <th>268C3_05_bin2</th>
+      <th>C68_3_05_bin2</th>
       <td>0</td>
       <td>122202</td>
       <td>169441</td>
@@ -2061,7 +3837,7 @@ display(HTML(fates
       <td>485620</td>
     </tr>
     <tr>
-      <th>268C3_05_bin3</th>
+      <th>C68_3_05_bin3</th>
       <td>0</td>
       <td>26</td>
       <td>72</td>
@@ -2069,7 +3845,7 @@ display(HTML(fates
       <td>88</td>
     </tr>
     <tr>
-      <th>268C3_05_bin4</th>
+      <th>C68_3_05_bin4</th>
       <td>0</td>
       <td>185</td>
       <td>2060</td>
@@ -2077,7 +3853,7 @@ display(HTML(fates
       <td>163</td>
     </tr>
     <tr>
-      <th>268C3_06_bin1</th>
+      <th>C68_3_06_bin1</th>
       <td>0</td>
       <td>612769</td>
       <td>809928</td>
@@ -2085,7 +3861,7 @@ display(HTML(fates
       <td>2290784</td>
     </tr>
     <tr>
-      <th>268C3_06_bin2</th>
+      <th>C68_3_06_bin2</th>
       <td>0</td>
       <td>71760</td>
       <td>96334</td>
@@ -2093,7 +3869,7 @@ display(HTML(fates
       <td>268451</td>
     </tr>
     <tr>
-      <th>268C3_06_bin3</th>
+      <th>C68_3_06_bin3</th>
       <td>0</td>
       <td>28</td>
       <td>157</td>
@@ -2101,7 +3877,7 @@ display(HTML(fates
       <td>69</td>
     </tr>
     <tr>
-      <th>268C3_06_bin4</th>
+      <th>C68_3_06_bin4</th>
       <td>0</td>
       <td>3</td>
       <td>3</td>
@@ -2109,7 +3885,199 @@ display(HTML(fates
       <td>2</td>
     </tr>
     <tr>
-      <th>268C61_01_bin1</th>
+      <th>C68_490_01_bin1</th>
+      <td>0</td>
+      <td>14544</td>
+      <td>1825</td>
+      <td>129</td>
+      <td>471</td>
+    </tr>
+    <tr>
+      <th>C68_490_01_bin2</th>
+      <td>0</td>
+      <td>45</td>
+      <td>10</td>
+      <td>14</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>C68_490_01_bin3</th>
+      <td>0</td>
+      <td>313770</td>
+      <td>136698</td>
+      <td>20794</td>
+      <td>751193</td>
+    </tr>
+    <tr>
+      <th>C68_490_01_bin4</th>
+      <td>0</td>
+      <td>4181664</td>
+      <td>2767396</td>
+      <td>431987</td>
+      <td>19120593</td>
+    </tr>
+    <tr>
+      <th>C68_490_02_bin1</th>
+      <td>0</td>
+      <td>12505</td>
+      <td>1536</td>
+      <td>753</td>
+      <td>549</td>
+    </tr>
+    <tr>
+      <th>C68_490_02_bin2</th>
+      <td>0</td>
+      <td>19795</td>
+      <td>3043</td>
+      <td>281</td>
+      <td>5360</td>
+    </tr>
+    <tr>
+      <th>C68_490_02_bin3</th>
+      <td>0</td>
+      <td>376884</td>
+      <td>143620</td>
+      <td>22443</td>
+      <td>783402</td>
+    </tr>
+    <tr>
+      <th>C68_490_02_bin4</th>
+      <td>0</td>
+      <td>2151624</td>
+      <td>1151248</td>
+      <td>244258</td>
+      <td>10298941</td>
+    </tr>
+    <tr>
+      <th>C68_490_03_bin1</th>
+      <td>0</td>
+      <td>49704</td>
+      <td>6448</td>
+      <td>415</td>
+      <td>4928</td>
+    </tr>
+    <tr>
+      <th>C68_490_03_bin2</th>
+      <td>0</td>
+      <td>388010</td>
+      <td>110521</td>
+      <td>17721</td>
+      <td>516020</td>
+    </tr>
+    <tr>
+      <th>C68_490_03_bin3</th>
+      <td>0</td>
+      <td>1370193</td>
+      <td>873205</td>
+      <td>200671</td>
+      <td>5571075</td>
+    </tr>
+    <tr>
+      <th>C68_490_03_bin4</th>
+      <td>0</td>
+      <td>3198395</td>
+      <td>2404916</td>
+      <td>276570</td>
+      <td>15306959</td>
+    </tr>
+    <tr>
+      <th>C68_490_04_bin1</th>
+      <td>0</td>
+      <td>276071</td>
+      <td>67628</td>
+      <td>10467</td>
+      <td>255218</td>
+    </tr>
+    <tr>
+      <th>C68_490_04_bin2</th>
+      <td>0</td>
+      <td>1636947</td>
+      <td>1090264</td>
+      <td>233370</td>
+      <td>6479086</td>
+    </tr>
+    <tr>
+      <th>C68_490_04_bin3</th>
+      <td>0</td>
+      <td>3182471</td>
+      <td>2343083</td>
+      <td>280554</td>
+      <td>15311437</td>
+    </tr>
+    <tr>
+      <th>C68_490_04_bin4</th>
+      <td>0</td>
+      <td>80</td>
+      <td>53</td>
+      <td>8</td>
+      <td>213</td>
+    </tr>
+    <tr>
+      <th>C68_490_05_bin1</th>
+      <td>0</td>
+      <td>1029922</td>
+      <td>674937</td>
+      <td>118273</td>
+      <td>4121628</td>
+    </tr>
+    <tr>
+      <th>C68_490_05_bin2</th>
+      <td>0</td>
+      <td>897272</td>
+      <td>634857</td>
+      <td>80741</td>
+      <td>4155778</td>
+    </tr>
+    <tr>
+      <th>C68_490_05_bin3</th>
+      <td>0</td>
+      <td>2009</td>
+      <td>492</td>
+      <td>122</td>
+      <td>3252</td>
+    </tr>
+    <tr>
+      <th>C68_490_05_bin4</th>
+      <td>0</td>
+      <td>288</td>
+      <td>111</td>
+      <td>14</td>
+      <td>566</td>
+    </tr>
+    <tr>
+      <th>C68_490_06_bin1</th>
+      <td>0</td>
+      <td>633073</td>
+      <td>418519</td>
+      <td>60233</td>
+      <td>2807921</td>
+    </tr>
+    <tr>
+      <th>C68_490_06_bin2</th>
+      <td>0</td>
+      <td>1076080</td>
+      <td>576466</td>
+      <td>96773</td>
+      <td>4794288</td>
+    </tr>
+    <tr>
+      <th>C68_490_06_bin3</th>
+      <td>0</td>
+      <td>893</td>
+      <td>399</td>
+      <td>56</td>
+      <td>2646</td>
+    </tr>
+    <tr>
+      <th>C68_490_06_bin4</th>
+      <td>0</td>
+      <td>494</td>
+      <td>100</td>
+      <td>1741</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>C68_61_01_bin1</th>
       <td>0</td>
       <td>182522</td>
       <td>254132</td>
@@ -2117,7 +4085,7 @@ display(HTML(fates
       <td>735338</td>
     </tr>
     <tr>
-      <th>268C61_01_bin2</th>
+      <th>C68_61_01_bin2</th>
       <td>0</td>
       <td>48702</td>
       <td>71819</td>
@@ -2125,7 +4093,7 @@ display(HTML(fates
       <td>203312</td>
     </tr>
     <tr>
-      <th>268C61_01_bin3</th>
+      <th>C68_61_01_bin3</th>
       <td>0</td>
       <td>149465</td>
       <td>166403</td>
@@ -2133,7 +4101,7 @@ display(HTML(fates
       <td>458487</td>
     </tr>
     <tr>
-      <th>268C61_01_bin4</th>
+      <th>C68_61_01_bin4</th>
       <td>0</td>
       <td>784767</td>
       <td>1033856</td>
@@ -2141,7 +4109,7 @@ display(HTML(fates
       <td>2882654</td>
     </tr>
     <tr>
-      <th>268C61_02_bin1</th>
+      <th>C68_61_02_bin1</th>
       <td>0</td>
       <td>69694</td>
       <td>120329</td>
@@ -2149,7 +4117,7 @@ display(HTML(fates
       <td>296674</td>
     </tr>
     <tr>
-      <th>268C61_02_bin2</th>
+      <th>C68_61_02_bin2</th>
       <td>0</td>
       <td>51712</td>
       <td>57619</td>
@@ -2157,7 +4125,7 @@ display(HTML(fates
       <td>160724</td>
     </tr>
     <tr>
-      <th>268C61_02_bin3</th>
+      <th>C68_61_02_bin3</th>
       <td>0</td>
       <td>252110</td>
       <td>286022</td>
@@ -2165,7 +4133,7 @@ display(HTML(fates
       <td>780410</td>
     </tr>
     <tr>
-      <th>268C61_02_bin4</th>
+      <th>C68_61_02_bin4</th>
       <td>0</td>
       <td>986240</td>
       <td>1257781</td>
@@ -2173,7 +4141,7 @@ display(HTML(fates
       <td>3610188</td>
     </tr>
     <tr>
-      <th>268C61_03_bin1</th>
+      <th>C68_61_03_bin1</th>
       <td>0</td>
       <td>126924</td>
       <td>181661</td>
@@ -2181,7 +4149,7 @@ display(HTML(fates
       <td>534247</td>
     </tr>
     <tr>
-      <th>268C61_03_bin2</th>
+      <th>C68_61_03_bin2</th>
       <td>0</td>
       <td>139280</td>
       <td>161852</td>
@@ -2189,7 +4157,7 @@ display(HTML(fates
       <td>415274</td>
     </tr>
     <tr>
-      <th>268C61_03_bin3</th>
+      <th>C68_61_03_bin3</th>
       <td>0</td>
       <td>754606</td>
       <td>913784</td>
@@ -2197,7 +4165,7 @@ display(HTML(fates
       <td>2511471</td>
     </tr>
     <tr>
-      <th>268C61_03_bin4</th>
+      <th>C68_61_03_bin4</th>
       <td>0</td>
       <td>303581</td>
       <td>406238</td>
@@ -2205,7 +4173,7 @@ display(HTML(fates
       <td>1186566</td>
     </tr>
     <tr>
-      <th>268C61_04_bin1</th>
+      <th>C68_61_04_bin1</th>
       <td>0</td>
       <td>64335</td>
       <td>86359</td>
@@ -2213,7 +4181,7 @@ display(HTML(fates
       <td>249015</td>
     </tr>
     <tr>
-      <th>268C61_04_bin2</th>
+      <th>C68_61_04_bin2</th>
       <td>0</td>
       <td>443211</td>
       <td>509965</td>
@@ -2221,7 +4189,7 @@ display(HTML(fates
       <td>1413264</td>
     </tr>
     <tr>
-      <th>268C61_04_bin3</th>
+      <th>C68_61_04_bin3</th>
       <td>0</td>
       <td>728608</td>
       <td>966319</td>
@@ -2229,7 +4197,7 @@ display(HTML(fates
       <td>2741227</td>
     </tr>
     <tr>
-      <th>268C61_04_bin4</th>
+      <th>C68_61_04_bin4</th>
       <td>0</td>
       <td>13</td>
       <td>155</td>
@@ -2237,7 +4205,7 @@ display(HTML(fates
       <td>44</td>
     </tr>
     <tr>
-      <th>268C61_05_bin1</th>
+      <th>C68_61_05_bin1</th>
       <td>0</td>
       <td>528028</td>
       <td>633806</td>
@@ -2245,7 +4213,7 @@ display(HTML(fates
       <td>1795102</td>
     </tr>
     <tr>
-      <th>268C61_05_bin2</th>
+      <th>C68_61_05_bin2</th>
       <td>0</td>
       <td>550345</td>
       <td>740362</td>
@@ -2253,7 +4221,7 @@ display(HTML(fates
       <td>2039434</td>
     </tr>
     <tr>
-      <th>268C61_05_bin3</th>
+      <th>C68_61_05_bin3</th>
       <td>0</td>
       <td>43</td>
       <td>116</td>
@@ -2261,7 +4229,7 @@ display(HTML(fates
       <td>122</td>
     </tr>
     <tr>
-      <th>268C61_05_bin4</th>
+      <th>C68_61_05_bin4</th>
       <td>0</td>
       <td>7</td>
       <td>109</td>
@@ -2269,7 +4237,7 @@ display(HTML(fates
       <td>41</td>
     </tr>
     <tr>
-      <th>268C61_06_bin1</th>
+      <th>C68_61_06_bin1</th>
       <td>0</td>
       <td>612769</td>
       <td>809928</td>
@@ -2277,7 +4245,7 @@ display(HTML(fates
       <td>2290784</td>
     </tr>
     <tr>
-      <th>268C61_06_bin2</th>
+      <th>C68_61_06_bin2</th>
       <td>0</td>
       <td>71760</td>
       <td>96334</td>
@@ -2285,7 +4253,7 @@ display(HTML(fates
       <td>268451</td>
     </tr>
     <tr>
-      <th>268C61_06_bin3</th>
+      <th>C68_61_06_bin3</th>
       <td>0</td>
       <td>28</td>
       <td>157</td>
@@ -2293,12 +4261,204 @@ display(HTML(fates
       <td>69</td>
     </tr>
     <tr>
-      <th>268C61_06_bin4</th>
+      <th>C68_61_06_bin4</th>
       <td>0</td>
       <td>3</td>
       <td>3</td>
       <td>0</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <th>C68_88_01_bin1</th>
+      <td>0</td>
+      <td>245757</td>
+      <td>470622</td>
+      <td>122554</td>
+      <td>3460851</td>
+    </tr>
+    <tr>
+      <th>C68_88_01_bin2</th>
+      <td>0</td>
+      <td>173512</td>
+      <td>120191</td>
+      <td>24835</td>
+      <td>813067</td>
+    </tr>
+    <tr>
+      <th>C68_88_01_bin3</th>
+      <td>0</td>
+      <td>493566</td>
+      <td>265548</td>
+      <td>41225</td>
+      <td>1663334</td>
+    </tr>
+    <tr>
+      <th>C68_88_01_bin4</th>
+      <td>0</td>
+      <td>3660265</td>
+      <td>2408485</td>
+      <td>284638</td>
+      <td>15376326</td>
+    </tr>
+    <tr>
+      <th>C68_88_02_bin1</th>
+      <td>0</td>
+      <td>403541</td>
+      <td>530593</td>
+      <td>124125</td>
+      <td>3667884</td>
+    </tr>
+    <tr>
+      <th>C68_88_02_bin2</th>
+      <td>0</td>
+      <td>342404</td>
+      <td>252188</td>
+      <td>39267</td>
+      <td>1584629</td>
+    </tr>
+    <tr>
+      <th>C68_88_02_bin3</th>
+      <td>0</td>
+      <td>691508</td>
+      <td>303103</td>
+      <td>50589</td>
+      <td>2069010</td>
+    </tr>
+    <tr>
+      <th>C68_88_02_bin4</th>
+      <td>0</td>
+      <td>3098644</td>
+      <td>1946801</td>
+      <td>253239</td>
+      <td>13333328</td>
+    </tr>
+    <tr>
+      <th>C68_88_03_bin1</th>
+      <td>0</td>
+      <td>438210</td>
+      <td>453002</td>
+      <td>98836</td>
+      <td>3192583</td>
+    </tr>
+    <tr>
+      <th>C68_88_03_bin2</th>
+      <td>0</td>
+      <td>334658</td>
+      <td>197438</td>
+      <td>35180</td>
+      <td>1280799</td>
+    </tr>
+    <tr>
+      <th>C68_88_03_bin3</th>
+      <td>0</td>
+      <td>2183518</td>
+      <td>1349444</td>
+      <td>168528</td>
+      <td>8939927</td>
+    </tr>
+    <tr>
+      <th>C68_88_03_bin4</th>
+      <td>0</td>
+      <td>572436</td>
+      <td>403269</td>
+      <td>47199</td>
+      <td>2622004</td>
+    </tr>
+    <tr>
+      <th>C68_88_04_bin1</th>
+      <td>0</td>
+      <td>831834</td>
+      <td>698928</td>
+      <td>140537</td>
+      <td>4687493</td>
+    </tr>
+    <tr>
+      <th>C68_88_04_bin2</th>
+      <td>0</td>
+      <td>2812053</td>
+      <td>1747535</td>
+      <td>228781</td>
+      <td>11667771</td>
+    </tr>
+    <tr>
+      <th>C68_88_04_bin3</th>
+      <td>0</td>
+      <td>332064</td>
+      <td>233088</td>
+      <td>29695</td>
+      <td>1569173</td>
+    </tr>
+    <tr>
+      <th>C68_88_04_bin4</th>
+      <td>0</td>
+      <td>171</td>
+      <td>802</td>
+      <td>1132</td>
+      <td>572</td>
+    </tr>
+    <tr>
+      <th>C68_88_05_bin1</th>
+      <td>0</td>
+      <td>2886992</td>
+      <td>2075630</td>
+      <td>311176</td>
+      <td>13260929</td>
+    </tr>
+    <tr>
+      <th>C68_88_05_bin2</th>
+      <td>0</td>
+      <td>806605</td>
+      <td>504862</td>
+      <td>67698</td>
+      <td>3586104</td>
+    </tr>
+    <tr>
+      <th>C68_88_05_bin3</th>
+      <td>0</td>
+      <td>636</td>
+      <td>215</td>
+      <td>24</td>
+      <td>1178</td>
+    </tr>
+    <tr>
+      <th>C68_88_05_bin4</th>
+      <td>0</td>
+      <td>203</td>
+      <td>201</td>
+      <td>154</td>
+      <td>1124</td>
+    </tr>
+    <tr>
+      <th>C68_88_06_bin1</th>
+      <td>0</td>
+      <td>633073</td>
+      <td>418519</td>
+      <td>60233</td>
+      <td>2807921</td>
+    </tr>
+    <tr>
+      <th>C68_88_06_bin2</th>
+      <td>0</td>
+      <td>1076080</td>
+      <td>576466</td>
+      <td>96773</td>
+      <td>4794288</td>
+    </tr>
+    <tr>
+      <th>C68_88_06_bin3</th>
+      <td>0</td>
+      <td>893</td>
+      <td>399</td>
+      <td>56</td>
+      <td>2646</td>
+    </tr>
+    <tr>
+      <th>C68_88_06_bin4</th>
+      <td>0</td>
+      <td>494</td>
+      <td>100</td>
+      <td>1741</td>
+      <td>88</td>
     </tr>
   </tbody>
 </table>

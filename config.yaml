@@ -26,10 +26,10 @@ site_number_offset: 330  # add this to sequential sites to get RBD numbering
 pdb_6m0j: data/6m0j.pdb
 
 # URLs from which we download binding & expression of mutants & variants from prior experiments
-SARSr_lib47_mut_bind_expr_url: https://raw.githubusercontent.com/jbloomlab/SARSr-CoV_homolog_survey/master/results/final_variant_scores/wt_variant_scores.csv
+SARSr_lib61_mut_bind_expr_url: https://raw.githubusercontent.com/jbloomlab/SARSr-CoV_homolog_survey/master/results/final_variant_scores/wt_variant_scores.csv
 
 
-# groups and orders of targets for plotting for lib47
+# groups and orders of targets for plotting for lib61
 mutated_targets_ordered:
   - AncSarbecovirus_MAP
   - BM48-31
@@ -61,6 +61,8 @@ targets_ordered:
   - Khosta-1
   - Khosta-2
   - RhGB01
+  - RhGB03
+  - RhGB02_230B
   - RsYN04
   - AncAsia_MAP
   - AncAsia_alt
@@ -73,6 +75,12 @@ targets_ordered:
   - SARS-CoV-2_Alpha
   - SARS-CoV-2_Beta
   - SARS-CoV-2_Delta
+  - SARS-CoV-2_Omicron-BA1
+  - SARS-CoV-2_Omicron-BA2
+  - SARS-CoV-2_Omicron-BA5
+  - SARS-CoV-2_Omicron-BQ11
+  - SARS-CoV-2_Omicron-XBB15
+  - BtSY2-RmCX02
   - BANAL-20-103
   - BANAL-20-236
   - RaTG13
@@ -80,6 +88,9 @@ targets_ordered:
   - GX-Pangolin
   - RshSTT182
   - Rc-o319
+  - Rc-kw8
+  - Rc-os20
+  - Rc-mk2
   - AncSARS1a_MAP
   - AncSARS1a_alt
   - AncSARS1a_tree1
@@ -106,6 +117,7 @@ targets_ordered:
   - Rs4231
   - RsSHC014
   - Rs4084
+  - BtSY1-RtLS01
   - AncClade2_MAP
   - AncClade2_alt
   - AncClade2_tree2
@@ -146,7 +158,9 @@ EurAf_extant:
   - Khosta-1
   - Khosta-2
   - RhGB01
-  
+  - RhGB03
+  - RhGB02_230B
+    
 RsYN04_extant:
   - RsYN04
 
@@ -155,6 +169,12 @@ SARS2_extant:
   - SARS-CoV-2_Alpha
   - SARS-CoV-2_Beta
   - SARS-CoV-2_Delta
+  - SARS-CoV-2_Omicron-BA1
+  - SARS-CoV-2_Omicron-BA2
+  - SARS-CoV-2_Omicron-BA5
+  - SARS-CoV-2_Omicron-BQ11
+  - SARS-CoV-2_Omicron-XBB15
+  - BtSY2-RmCX02
   - BANAL-20-103
   - BANAL-20-236
   - RaTG13
@@ -162,7 +182,10 @@ SARS2_extant:
   - GX-Pangolin
   - RshSTT182
   - Rc-o319
-  
+  - Rc-kw8
+  - Rc-os20
+  - Rc-mk2
+
 SARS1_extant:
   - SARS-CoV-1_Sin852_HP03L
   - SARS-CoV-1_GZ-C_HP03L
@@ -183,6 +206,7 @@ SARS1_extant:
   - Rs4231
   - RsSHC014
   - Rs4084
+  - BtSY1-RtLS01
 
 Clade2_extant:
   - Rf4092
@@ -251,6 +275,20 @@ ancestors_MAP_v_alt:
   - AncClade2_alt3_del2-only
   - AncClade2_alt4_dels-only
 
+targets_low_bc:
+  - RhGB03
+  - RhGB02_230B
+  - BtSY1-RtLS01
+  - Rc-kw8
+  - Rc-os20
+  - Rc-mk2
+  - BtSY2-RmCX02
+  - SARS-CoV-2_Omicron-BA1
+  - SARS-CoV-2_Omicron-BA2
+  - SARS-CoV-2_Omicron-BA5
+  - SARS-CoV-2_Omicron-BQ11
+  - SARS-CoV-2_Omicron-XBB15
+
 #indexing of mutated sites for mutated targets
 mutant_indexing_file: data/mutated_target_indexing.csv  
 
@@ -262,9 +300,9 @@ summary_dir: results/summary
 figs_dir: results/figures
 
 #downloads of prior data
-SARSr_lib47_mut_bind_expr: results/prior_DMS_data/SARSr-lib47_wts_ACE2binding_expression.csv
+SARSr_lib61_mut_bind_expr: results/prior_DMS_data/SARSr-lib61_wts_ACE2binding_expression.csv
 
-codon_variant_table_file_lib47: data/codon_variant_table_lib47.csv
+codon_variant_table_file_lib61: data/codon_variant_table_lib61.csv
 
 counts_dir: results/counts
 variant_counts_file: results/counts/variant_counts.csv
@@ -273,7 +311,7 @@ mAb_EC50_dir: results/bc_mAb_EC50/
 mAb_EC50_file: results/bc_mAb_EC50/bc_mAb_EC50.csv
 
 final_variant_scores_dir: results/final_variant_scores/
-final_variant_scores_lib47_file: results/final_variant_scores/final_variant_scores_lib47.csv
+final_variant_scores_lib61_file: results/final_variant_scores/final_variant_scores_lib61.csv
 
 
 # max error rate in gene / barcode CCSs retained for consensu building

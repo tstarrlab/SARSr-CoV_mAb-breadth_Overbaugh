@@ -29,12 +29,6 @@ def nb_markdown(nb):
     return os.path.join(config['summary_dir'],
                         os.path.basename(os.path.splitext(nb)[0]) + '.md')
 
-# Global variables extracted from config --------------------------------------
-pacbio_runs = (pd.read_csv(config['pacbio_runs'], dtype = str)
-               .assign(pacbioRun=lambda x: x['library'] + '_' + x['run'])
-               )
-assert len(pacbio_runs['pacbioRun'].unique()) == len(pacbio_runs['pacbioRun'])
-
 # Information on samples and barcode runs -------------------------------------
 barcode_runs = pd.read_csv(config['barcode_runs'])
 
@@ -46,13 +40,14 @@ rule make_summary:
     """Create Markdown summary of analysis."""
     input:
         dag=os.path.join(config['summary_dir'], 'dag.svg'),
-        SARSr_lib47_get_mut_bind_expr=config['SARSr_lib47_mut_bind_expr'],
+        env='environment_pinned.yml',
+        SARSr_lib61_get_mut_bind_expr=config['SARSr_lib61_mut_bind_expr'],
         variant_counts_file=config['variant_counts_file'],
         count_variants=nb_markdown('count_variants.ipynb'),
         compute_EC50='results/summary/compute_EC50.md',
         barcode_EC50=config['mAb_EC50_file'],
-        collapse_bc_lib47='results/summary/collapse_barcodes_lib47_SARSr-wts.md',
-        collapse_bc_lib47_file=config['final_variant_scores_lib47_file'],
+        collapse_bc_lib61='results/summary/collapse_barcodes_lib61_SARSr-wts.md',
+        collapse_bc_lib61_file=config['final_variant_scores_lib61_file'],
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -86,7 +81,7 @@ rule make_summary:
                Creates a [table]({path(input.barcode_EC50)})
                giving the EC50 phenotype of each barcoded variant in each condition.
             
-            4. Collapse internal replicate barcodes of each variant to final variant phenotypes for the wildtype sarbecovirus homologs pool. Analysis [here]({path(input.collapse_bc_lib47)}) and final output file [here]({path(input.collapse_bc_lib47_file)}).
+            4. Collapse internal replicate barcodes of each variant to final variant phenotypes for the wildtype sarbecovirus homologs pool. Analysis [here]({path(input.collapse_bc_lib61)}) and final output file [here]({path(input.collapse_bc_lib61_file)}).
                         
             """
             ).strip())
@@ -110,20 +105,20 @@ rule save_pinned_env:
         conda env export > {log}
         """
 
-rule collapse_bcs_lib47_SARSr_wts:
+rule collapse_bcs_lib61_SARSr_wts:
     input:
         config['mAb_EC50_file'],
-        config['SARSr_lib47_mut_bind_expr']
+        config['SARSr_lib61_mut_bind_expr']
     output:
-        config['final_variant_scores_lib47_file'],
-        md='results/summary/collapse_barcodes_lib47_SARSr-wts.md',
-        md_files=directory('results/summary/collapse_barcodes_lib47_SARSr-wts_files')
+        config['final_variant_scores_lib61_file'],
+        md='results/summary/collapse_barcodes_lib61_SARSr-wts.md',
+        md_files=directory('results/summary/collapse_barcodes_lib61_SARSr-wts_files')
     envmodules:
         'R/4.1.3'
     params:
-        nb='collapse_barcodes_lib47_SARSr-wts.Rmd',
-        md='collapse_barcodes_lib47_SARSr-wts.md',
-        md_files='collapse_barcodes_lib47_SARSr-wts_files'
+        nb='collapse_barcodes_lib61_SARSr-wts.Rmd',
+        md='collapse_barcodes_lib61_SARSr-wts.md',
+        md_files='collapse_barcodes_lib61_SARSr-wts_files'
     shell:
         """
         R -e \"rmarkdown::render(input=\'{params.nb}\')\";
@@ -134,7 +129,7 @@ rule collapse_bcs_lib47_SARSr_wts:
 rule calculate_bc_mAb_EC50:
     input:
         config['barcode_runs'],
-        config['codon_variant_table_file_lib47'],
+        config['codon_variant_table_file_lib61'],
         config['variant_counts_file']
     output:
         config['mAb_EC50_file'],
@@ -158,7 +153,7 @@ rule count_variants:
     """Count codon variants from Illumina barcode runs."""
     input:
         config['barcode_runs'],
-        config['codon_variant_table_file_lib47']
+        config['codon_variant_table_file_lib61']
     output:
         config['variant_counts_file'],
         nb_markdown=nb_markdown('count_variants.ipynb')
@@ -170,6 +165,6 @@ rule count_variants:
 rule get_SARSr_wts_mut_bind_expr:
     """Download SARSr wts library ACE2-binding and expression scores from URL."""
     output:
-        file=config['SARSr_lib47_mut_bind_expr']
+        file=config['SARSr_lib61_mut_bind_expr']
     run:
-        urllib.request.urlretrieve(config['SARSr_lib47_mut_bind_expr_url'], output.file)
+        urllib.request.urlretrieve(config['SARSr_lib61_mut_bind_expr_url'], output.file)

@@ -23,4 +23,4 @@ workflow:
    Creates a [table](../bc_mAb_EC50/bc_mAb_EC50.csv)
    giving the EC50 phenotype of each barcoded variant in each condition.
 
-4. Collapse internal replicate barcodes of each variant to final variant phenotypes for the wildtype sarbecovirus homologs pool. Analysis [here](collapse_barcodes_lib47_SARSr-wts.md) and final output file [here](../final_variant_scores/final_variant_scores_lib47.csv).
+4. Collapse internal replicate barcodes of each variant to final variant phenotypes for the wildtype sarbecovirus homologs pool. Analysis [here](collapse_barcodes_lib61_SARSr-wts.md) and final output file [here](../final_variant_scores/final_variant_scores_lib61.csv).
