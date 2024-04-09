@@ -1,4 +1,4 @@
-# Mutational antigenic profiling of a pan-sarbecovirus vaccine against diverse SARS-related coronaviruses
+# Mapping of breadth of monoclonal antibodies against all SARS-related CoV strains
 
 Study and analysis by Will Foreman, Tyler Starr, and co-authors.
 
