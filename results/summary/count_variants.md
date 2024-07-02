@@ -1212,7 +1212,7 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>1</td>
       <td>231026</td>
       <td>529191</td>
-      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b1_R1_001.fastq.gz]</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b1_R1_001.fastq.gz, /uufs/chpc.utah.edu/common/home/starr-group1/sequencing/WBF/2024/240515_s2h97c5078breadth/C68-10redo-s1-b1_R1_001.fastq.gz]</td>
     </tr>
     <tr>
       <td>lib61_SARSr-wts</td>
@@ -1222,7 +1222,7 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>1</td>
       <td>231026</td>
       <td>136022</td>
-      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b2_R1_001.fastq.gz]</td>
+      <td>[/uufs/chpc.utah.edu/common/home/u6042467/starr-group1/sequencing/TNS/2023/231212_bc_Overbaugh-mAbs/20231026-s1-b2_R1_001.fastq.gz, /uufs/chpc.utah.edu/common/home/starr-group1/sequencing/WBF/2024/240515_s2h97c5078breadth/C68-10redo-s1-b2_R1_001.fastq.gz]</td>
     </tr>
     <tr>
       <td>lib61_SARSr-wts</td>
@@ -2735,18 +2735,18 @@ display(HTML(fates
       <th rowspan="216" valign="top">lib61_SARSr-wts</th>
       <th>C68_10_01_bin1</th>
       <td>0</td>
-      <td>2843</td>
-      <td>1539</td>
-      <td>326</td>
-      <td>11528</td>
+      <td>2193774</td>
+      <td>1774313</td>
+      <td>286466</td>
+      <td>8330917</td>
     </tr>
     <tr>
       <th>C68_10_01_bin2</th>
       <td>0</td>
-      <td>12776</td>
-      <td>7355</td>
-      <td>1222</td>
-      <td>51524</td>
+      <td>741915</td>
+      <td>491644</td>
+      <td>69049</td>
+      <td>2886912</td>
     </tr>
     <tr>
       <th>C68_10_01_bin3</th>

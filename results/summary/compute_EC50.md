@@ -70,12 +70,12 @@ sessionInfo()
     ## [17] lifecycle_1.0.3  munsell_0.5.0    gtable_0.3.0     cellranger_1.1.0
     ## [21] rvest_1.0.2      evaluate_0.15    knitr_1.37       tzdb_0.2.0      
     ## [25] fastmap_1.1.0    fansi_1.0.2      broom_0.7.12     Rcpp_1.0.11     
-    ## [29] backports_1.4.1  scales_1.2.1     jsonlite_1.8.7   fs_1.5.2        
+    ## [29] backports_1.4.1  scales_1.2.1     jsonlite_1.8.0   fs_1.5.2        
     ## [33] hms_1.1.1        digest_0.6.29    stringi_1.7.6    grid_4.1.3      
     ## [37] cli_3.6.0        tools_4.1.3      magrittr_2.0.2   crayon_1.5.0    
     ## [41] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    
     ## [45] lubridate_1.8.0  rstudioapi_0.13  assertthat_0.2.1 rmarkdown_2.13  
-    ## [49] httr_1.4.7       R6_2.5.1         compiler_4.1.3
+    ## [49] httr_1.4.2       R6_2.5.1         compiler_4.1.3
 
 ## Setup
 
@@ -231,8 +231,8 @@ for(i in 1:nrow(barcode_runs)){
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_61_06_bin2 is 3.25406984496406"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_61_06_bin3 is 2.02941176470588"
     ## [1] "reads < cells for lib61_SARSr-wts C68_61_06_bin4 , un-normalized (ratio 0.1 )"
-    ## [1] "reads < cells for lib61_SARSr-wts C68_10_01_bin1 , un-normalized (ratio 0.0217841951204764 )"
-    ## [1] "reads < cells for lib61_SARSr-wts C68_10_01_bin2 , un-normalized (ratio 0.378791666054021 )"
+    ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin1 is 15.7427412786688"
+    ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin2 is 21.2238608460396"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin3 is 9.43915145361029"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin4 is 2.39073930920131"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_02_bin1 is 5.43841816552942"
@@ -721,7 +721,7 @@ hit the different boundary conditions of the fit variables.
 
 We successfully generated EC50 estimates for 0.4956073 of our C68_61 mAb
 measurements, 0.747358 of the C68_183 mAb, 0.556468 of C68_185,
-0.7168004 of C68_3 mAb, 0.3697479 of our C68_10 mAb, 0.6965877 of our
+0.7168004 of C68_3 mAb, 0.6525974 of our C68_10 mAb, 0.6965877 of our
 C68_88 mAb, 0.706328 of our C68_201 mAb, 0.6612554 of our C68_239 mAb,
 and 0.7109753 of our C68_490 mAb.
 
@@ -1071,7 +1071,6 @@ grid.arrange(p1,ncol=1)
 ```
 
     ## Warning: Groups with fewer than two data points have been dropped.
-    ## Groups with fewer than two data points have been dropped.
 
 <img src="compute_EC50_files/figure-gfm/binding_distribution_vioplot_C68_10-1.png" style="display: block; margin: auto;" />
 
