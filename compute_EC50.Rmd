@@ -395,7 +395,8 @@ dt[,c("EC50_C68_10","EC50_SE_C68_10","response_C68_10","baseline_C68_10","nMSR_C
                                      `C68_10_04_meanbin`,`C68_10_05_meanbin`,`C68_10_06_meanbin`),
                             x.vals=samples_C68_10$conc,
                             count.vals=c(`C68_10_01_totalcount`,`C68_10_02_totalcount`,`C68_10_03_totalcount`,
-                                         `C68_10_04_totalcount`,`C68_10_05_totalcount`,`C68_10_06_totalcount`)),
+                                         `C68_10_04_totalcount`,`C68_10_05_totalcount`,`C68_10_06_totalcount`),
+                            EC50.start=1),
               error=function(e){list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))}),by=c("library","barcode")]
 
 

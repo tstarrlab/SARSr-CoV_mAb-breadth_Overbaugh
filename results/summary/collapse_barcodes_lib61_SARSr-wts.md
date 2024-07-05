@@ -158,8 +158,6 @@ grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,ncol=1)
 
     ## Warning: Groups with fewer than two data points have been dropped.
     ## Groups with fewer than two data points have been dropped.
-    ## Groups with fewer than two data points have been dropped.
-    ## Groups with fewer than two data points have been dropped.
 
 <img src="collapse_barcodes_lib61_SARSr-wts_files/figure-gfm/unfiltered_AUCs-1.png" style="display: block; margin: auto;" />
 
@@ -245,7 +243,6 @@ grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,ncol=1)
 ```
 
     ## Warning: Groups with fewer than two data points have been dropped.
-    ## Groups with fewer than two data points have been dropped.
 
 <img src="collapse_barcodes_lib61_SARSr-wts_files/figure-gfm/censor_2.5_AUCs-1.png" style="display: block; margin: auto;" />
 
@@ -550,6 +547,34 @@ p1
 
 ``` r
 invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/lib61_heatmap_EC50_MAP-ancestors.pdf",sep="")))
+```
+
+For mAbs 61 and 185, make violin plots in heatmap/extant clade order
+
+``` r
+#make temp factored data frame
+extant_lib47 <- c(config$SARS2_extant,config$SARS1_extant,config$RsYN04_extant,config$EurAf_extant,config$Clade2_extant)
+extant_lib47 <- extant_lib47[!(extant_lib47 %in% config$targets_low_bc)]
+
+temp <- dt[target %in% extant_lib47]; temp$target <- factor(temp$target, levels=extant_lib47)
+
+p1 <- ggplot(temp[!is.na(EC50_C68_61) & ((EC50_C68_61 > C68_61_censor_lower & EC50_C68_61 < C68_61_censor_upper) | target %in% config$targets_low_bc) ,],
+             aes(x=target,y=log10(EC50_C68_61)))+
+  geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
+  ggtitle("C68_61 mAb binding")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
+
+p2 <- ggplot(temp[!is.na(EC50_C68_185) & ((EC50_C68_185 > C68_185_censor_lower & EC50_C68_185 < C68_185_censor_upper) | target %in% config$targets_low_bc) ,],
+             aes(x=target,y=log10(EC50_C68_185)))+
+  geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
+  ggtitle("C68_185 mAb binding")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
+
+grid.arrange(p1,p2,ncol=1)
+```
+
+<img src="collapse_barcodes_lib61_SARSr-wts_files/figure-gfm/publication_vioplots-1.png" style="display: block; margin: auto;" />
+
+``` r
+invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/vioplots_AUC-cens_mabs-61-185.pdf",sep="")))
 ```
 
 Save output file.

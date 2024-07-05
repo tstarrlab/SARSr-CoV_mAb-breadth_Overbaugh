@@ -231,8 +231,8 @@ for(i in 1:nrow(barcode_runs)){
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_61_06_bin2 is 3.25406984496406"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_61_06_bin3 is 2.02941176470588"
     ## [1] "reads < cells for lib61_SARSr-wts C68_61_06_bin4 , un-normalized (ratio 0.1 )"
-    ## [1] "reads < cells for lib61_SARSr-wts C68_10_01_bin1 , un-normalized (ratio 0.0217841951204764 )"
-    ## [1] "reads < cells for lib61_SARSr-wts C68_10_01_bin2 , un-normalized (ratio 0.378791666054021 )"
+    ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin1 is 15.7427412786688"
+    ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin2 is 21.2238608460396"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin3 is 9.43915145361029"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_01_bin4 is 2.39073930920131"
     ## [1] "read:cell ratio for lib61_SARSr-wts C68_10_02_bin1 is 5.43841816552942"
@@ -666,7 +666,8 @@ dt[,c("EC50_C68_10","EC50_SE_C68_10","response_C68_10","baseline_C68_10","nMSR_C
                                      `C68_10_04_meanbin`,`C68_10_05_meanbin`,`C68_10_06_meanbin`),
                             x.vals=samples_C68_10$conc,
                             count.vals=c(`C68_10_01_totalcount`,`C68_10_02_totalcount`,`C68_10_03_totalcount`,
-                                         `C68_10_04_totalcount`,`C68_10_05_totalcount`,`C68_10_06_totalcount`)),
+                                         `C68_10_04_totalcount`,`C68_10_05_totalcount`,`C68_10_06_totalcount`),
+                            EC50.start=1),
               error=function(e){list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))}),by=c("library","barcode")]
 
 
@@ -721,7 +722,7 @@ hit the different boundary conditions of the fit variables.
 
 We successfully generated EC50 estimates for 0.4956073 of our C68_61 mAb
 measurements, 0.747358 of the C68_183 mAb, 0.556468 of C68_185,
-0.7168004 of C68_3 mAb, 0.3697479 of our C68_10 mAb, 0.6965877 of our
+0.7168004 of C68_3 mAb, 0.6941367 of our C68_10 mAb, 0.6965877 of our
 C68_88 mAb, 0.706328 of our C68_201 mAb, 0.6612554 of our C68_239 mAb,
 and 0.7109753 of our C68_490 mAb.
 
@@ -1069,9 +1070,6 @@ p1 <- ggplot(dt[!is.na(EC50_C68_10),],aes(x=target,y=EC50_C68_10))+
 
 grid.arrange(p1,ncol=1)
 ```
-
-    ## Warning: Groups with fewer than two data points have been dropped.
-    ## Groups with fewer than two data points have been dropped.
 
 <img src="compute_EC50_files/figure-gfm/binding_distribution_vioplot_C68_10-1.png" style="display: block; margin: auto;" />
 
